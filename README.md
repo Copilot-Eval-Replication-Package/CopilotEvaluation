@@ -1,6 +1,10 @@
 # GitHub Copilot AI pair programmer: Asset or Liability?
 This repository contains the replication package for our Journal of Systems and Software (JSS) paper titled: __GitHub Copilot AI pair programmer: Asset or Liability?__ submitted on June 2022. This repository contains our detailed results and the python scripts which were used for generating them.
 
+In this paper, we study Copilot's abilities as a pair-programmer by: 
+ - Testing its abilities on code generation for fundamental software engineering algorithms. 
+ - Comparing its generated codes with humans on programming tasks.
+ 
 This repository is broken into two directories:
  - Copilot_on_Algorithm_Design: contains the python scripts and the results which were used to answer RQ1 of our paper: ___Can Copilot suggest correct and efficient solutions for some basic algorithmic problems?___
  - Copilot_vs_human: contains the python scripts and the results which were used to answer RQ2 of our paper: ___Are Copilot’s solutions competitive with humans’ solutions in solving programming problems?___
