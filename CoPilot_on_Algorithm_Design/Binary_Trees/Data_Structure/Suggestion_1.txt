@@ -1,0 +1,535 @@
+"Synthesizing 10/10 solutions
+
+=======
+
+class BST:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+        self.parent = None
+    def insert(self, value):
+        if value < self.value:
+            if self.left is None:
+                self.left = BST(value)
+                self.left.parent = self
+            else:
+                self.left.insert(value)
+        elif value > self.value:
+            if self.right is None:
+                self.right = BST(value)
+                self.right.parent = self
+            else:
+                self.right.insert(value)
+    def search(self, value):
+        if value < self.value:
+            if self.left is None:
+                return None
+            return self.left.search(value)
+        elif value > self.value:
+            if self.right is None:
+                return None
+            return self.right.search(value)
+        else:
+            return self
+    def delete(self, value):
+        if value < self.value:
+            if self.left is not None:
+                self.left.delete(value)
+        elif value > self.value:
+            if self.right is not None:
+                self.right.delete(value)
+        else:
+            if self.left is None and self.right is None:
+                if self.parent.left is self:
+                    self.parent.left = None
+                else:
+                    self.parent.right = None
+            elif self.left is None:
+                if self.parent.left is self:
+                    self.parent.left = self.right
+                else:
+                    self.parent.right = self.right
+            elif self.right is None:
+                if self.parent.left is self:
+                    self.parent.left = self.left
+                else:
+                    self.parent.right = self.left
+            else:
+                tmp = self.right.findMin()
+                self.value = tmp.value
+                tmp.delete(tmp.value)
+    def findMin(self):
+        if self.left is
+
+=======
+
+class BST:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+        self.parent = None
+    def insert(self, value):
+        if value < self.value:
+            if self.left is None:
+                self.left = BST(value)
+                self.left.parent = self
+            else:
+                self.left.insert(value)
+        else:
+            if self.right is None:
+                self.right = BST(value)
+                self.right.parent = self
+            else:
+                self.right.insert(value)
+    def search(self, value):
+        if value < self.value:
+            if self.left is None:
+                return False
+            else:
+                return self.left.search(value)
+        elif value > self.value:
+            if self.right is None:
+                return False
+            else:
+                return self.right.search(value)
+        else:
+            return True
+    def delete(self, value):
+        if value < self.value:
+            if self.left is None:
+                return False
+            else:
+                self.left.delete(value)
+        elif value > self.value:
+            if self.right is None:
+                return False
+            else:
+                self.right.delete(value)
+        else:
+            if self.left is None and self.right is None:
+                if self.parent.left is self:
+                    self.parent.left = None
+                else:
+                    self.parent.right = None
+            elif self.left is None:
+                if self.parent.left is self:
+                    self.parent.left = self.right
+                    self.right.parent = self.parent
+                else:
+                    self.parent.right = self.right
+                    self.right.parent = self.parent
+            elif self.right is None:
+                if self.parent.left is self:
+                    self.parent.left = self.left
+                    self.left.parent = self.parent
+                else:
+                    self.parent.right = self.left
+
+=======
+
+class BST:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+        self.parent = None
+    def insert(self, value):
+        if value < self.value:
+            if self.left:
+                self.left.insert(value)
+            else:
+                self.left = BST(value)
+                self.left.parent = self
+        elif value > self.value:
+            if self.right:
+                self.right.insert(value)
+            else:
+                self.right = BST(value)
+                self.right.parent = self
+        else:
+            print(""Value already in tree"")
+    def search(self, value):
+        if value < self.value:
+            if self.left:
+                return self.left.search(value)
+            else:
+                return None
+        elif value > self.value:
+            if self.right:
+                return self.right.search(value)
+            else:
+                return None
+        else:
+            return self
+    def delete(self, value):
+        if value < self.value:
+            if self.left:
+                self.left.delete(value)
+        elif value > self.value:
+            if self.right:
+                self.right.delete(value)
+        else:
+            if self.left is None and self.right is None:
+                if self.parent.left == self:
+                    self.parent.left = None
+                else:
+                    self.parent.right = None
+            elif self.right is None:
+                if self.parent.left == self:
+                    self.parent.left = self.left
+                else:
+                    self.parent.right = self.left
+                self.left.parent = self.parent
+            elif self.left is None:
+                if self.parent.left == self:
+                    self.parent.left = self.right
+                else:
+                    self.parent.right = self.right
+                self.right.parent = self.parent
+            else:
+                predecessor = self.left.findMax()
+                self.value
+
+=======
+
+class BST:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+        self.parent = None
+    def insert(self, value):
+        if value < self.value:
+            if self.left is None:
+                self.left = BST(value)
+                self.left.parent = self
+            else:
+                self.left.insert(value)
+        else:
+            if self.right is None:
+                self.right = BST(value)
+                self.right.parent = self
+            else:
+                self.right.insert(value)
+    def find(self, value):
+        if value < self.value:
+            if self.left is None:
+                return None
+            else:
+                return self.left.find(value)
+        elif value > self.value:
+            if self.right is None:
+                return None
+            else:
+                return self.right.find(value)
+        else:
+            return self
+    def delete(self, value):
+        node_to_delete = self.find(value)
+        if node_to_delete is None:
+            return False
+        if node_to_delete.left is None or node_to_delete.right is None:
+            if node_to_delete.left is None:
+                child = node_to_delete.right
+            else:
+                child = node_to_delete.left
+            if node_to_delete.parent is None:
+                node_to_delete = child
+            else:
+                if node_to_delete is node_to_delete.parent.left:
+                    node_to_delete.parent.left = child
+                else:
+                    node_to_delete.parent.right = child
+                if child is not None:
+                    child.parent = node_to_delete.parent
+            return True
+        else:
+            successor = node_to_delete.right
+            while successor.left is not None:
+                successor = successor.left
+            node_to_delete.value = successor.value
+            self.delete(successor.value)
+    def preorder
+
+=======
+
+class BST:
+    def __init__(self,value):
+        self.value = value
+        self.left = None
+        self.right = None
+        self.parent = None
+    def insert(self,value):
+        if value < self.value:
+            if self.left:
+                self.left.insert(value)
+            else:
+                self.left = BST(value)
+                self.left.parent = self
+        else:
+            if self.right:
+                self.right.insert(value)
+            else:
+                self.right = BST(value)
+                self.right.parent = self
+    def find(self,value):
+        if value == self.value:
+            return self
+        elif value < self.value and self.left:
+            return self.left.find(value)
+        elif value > self.value and self.right:
+            return self.right.find(value)
+        else:
+            return None
+    def delete(self,value):
+        node = self.find(value)
+        if node is None:
+            return None
+        elif node.left and node.right:
+            min_node = node.right.find_min()
+            node.value = min_node.value
+            node.right.delete(min_node.value)
+        elif node.left or node.right:
+            if node.left:
+                child = node.left
+            else:
+                child = node.right
+            child.parent = node.parent
+            if node.parent:
+                if node.parent.left == node:
+                    node.parent.left = child
+                else:
+                    node.parent.right = child
+            else:
+                self = child
+        else:
+            if node.parent:
+                if node.parent.left == node:
+                    node.parent.left = None
+                else:
+                    node.parent.right = None
+            else:
+                self = None
+    def find_min(self):
+        if self.left:
+            return self.left.find_min()
+        else:
+            return self
+    def find_max(self):
+        if self
+
+=======
+
+class BST:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+        self.parent = None
+        self.vertices = []
+        self.edges = []
+
+    def insert(self, value):
+        if value < self.value:
+            if self.left is None:
+                self.left = BST(value)
+                self.left.parent = self
+                self.vertices.append(value)
+                self.edges.append((self.value, value))
+            else:
+                self.left.insert(value)
+        elif value > self.value:
+            if self.right is None:
+                self.right = BST(value)
+                self.right.parent = self
+                self.vertices.append(value)
+                self.edges.append((self.value, value))
+            else:
+                self.right.insert(value)
+        else:
+            self.vertices.append(value)
+            self.edges.append((self.value, value))
+
+    def search(self, value):
+        if value < self.value:
+            if self.left is None:
+                return None
+            else:
+                return self.left.search(value)
+        elif value > self.value:
+            if self.right is None:
+                return None
+            else:
+                return self.right.search(value)
+        else:
+            return self
+
+    def delete(self, value):
+        if value < self.value:
+            if self.left is None:
+                return None
+            else:
+                self.left.delete(value)
+        elif value > self.value:
+            if self.right is None:
+                return None
+            else:
+                self.right.delete(value)
+        else:
+            if self.left is None and self.right is None:
+                if self.parent.left == self:
+                    self.parent.left = None
+                elif self.parent.right == self:
+                    self.parent.right = None
+            elif self.left is None or self.right is None
+
+=======
+
+class BST:
+    def __init__(self, value):
+        self.left = None
+        self.right = None
+        self.parent = None
+        self.value = value
+
+=======
+
+class BST:
+    def __init__(self,value):
+        self.left = None
+        self.right = None
+        self.value = value
+        self.parent = None
+        self.vertices = []
+        self.edges = []
+        self.vertices.append(self)
+        self.edges.append(self)
+    def __str__(self):
+        return str(self.value)
+    def insert(self,value):
+        if value < self.value:
+            if self.left:
+                self.left.insert(value)
+            else:
+                self.left = BST(value)
+                self.left.parent = self
+                self.left.vertices.append(self.left)
+                self.edges.append(self.left)
+        elif value > self.value:
+            if self.right:
+                self.right.insert(value)
+            else:
+                self.right = BST(value)
+                self.right.parent = self
+                self.right.vertices.append(self.right)
+                self.edges.append(self.right)
+        else:
+            return False
+    def search(self,value):
+        if value < self.value:
+            if self.left:
+                return self.left.search(value)
+            else:
+                return False
+        elif value > self.value:
+            if self.right:
+                return self.right.search(value)
+            else:
+                return False
+        else:
+            return True
+    def findMin(self):
+        if self.left:
+            return self.left.findMin()
+        else:
+            return self
+    def findMax(self):
+        if self.right:
+            return self.right.findMax()
+        else:
+            return self
+    def findSuccessor(self):
+        if self.right:
+            return self.right.findMin()
+        else:
+            if self.parent:
+                if self.parent.left == self:
+                    return self.parent
+                else:
+                    return self.parent.findSuccessor()
+            else:
+                return None
+
+=======
+
+class BST:
+    def __init__(self, v, p, l, r):
+        self.vertex = v
+        self.parent = p
+        self.left = l
+        self.right = r
+        self.value = None
+
+    def __str__(self):
+        return str(self.vertex)
+
+    def __repr__(self):
+        return str(self.vertex)
+
+=======
+
+class BST():
+	# initialize an empty tree
+	def __init__(self):
+		self.value = None
+		self.left = None
+		self.right = None
+		self.parent = None
+		self.vertices = []
+		self.edges = []
+
+	# insert a new node into the tree
+	def insert(self,new_node):
+		# if the tree is empty
+		if self.value == None:
+			self.value = new_node
+			return
+		# if the tree is not empty
+		if new_node.value < self.value:
+			# if the left child is empty
+			if self.left == None:
+				self.left = new_node
+				new_node.parent = self
+				return
+			# if the left child is not empty
+			else:
+				self.left.insert(new_node)
+				return
+		# if the new node is larger than the root
+		if new_node.value > self.value:
+			# if the right child is empty
+			if self.right == None:
+				self.right = new_node
+				new_node.parent = self
+				return
+			# if the right child is not empty
+			else:
+				self.right.insert(new_node)
+				return
+
+	# find the node with the given value
+	def find(self,value):
+		# if the value is equal to the root
+		if self.value == value:
+			return self
+		# if the value is less than the root
+		if value < self.value:
+			# if the left child is empty
+			if self.left == None:
+				return None
+			# if the left child is not empty
+			else:
+				return self.left.find(value)
+		# if the value is larger than the root"
