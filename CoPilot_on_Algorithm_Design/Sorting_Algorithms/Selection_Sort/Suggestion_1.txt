@@ -1,0 +1,48 @@
+"Synthesizing 10/10 solutions (Duplicates hidden)
+
+=======
+
+# 
+# 
+# def sort_array(arr):
+#     sorted_arr = []
+#     unsorted_arr = arr
+#     while len(unsorted_arr) > 0:
+#         smallest = unsorted_arr[0]
+#         for i in unsorted_arr:
+#             if i < smallest:
+#                 smallest = i
+#         sorted_arr.append(smallest)
+#         unsorted_arr.remove(smallest)
+#     return sorted_arr
+# 
+# 
+# print(sort_array([5, 3, 6, 2, 10]))
+# 
+# create a function that accepts an array as input. the function will create two lists, one named sorted and the other unsorted. at the begning, the unsorted list will be the same as the input array.
+# 
+# 
+# def sort_array(arr):
+#     sorted_arr = []
+#     unsorted_arr = arr
+#     while len(unsorted_arr) > 0:
+#         smallest = unsorted_arr[0]
+#         for i in unsorted_arr:
+#             if i < smallest:
+#                 smallest = i
+#         sorted_arr.append(smallest)
+#         unsorted_arr.remove(smallest)
+#     return sorted_arr
+# 
+# 
+# print(sort_array([5, 3, 6, 2, 10]))
+# 
+# create a function that accepts an array as input. the function will create two lists, one named sorted and the other unsorted. at the begning, the unsorted list will be the same as the input array.
+# 
+# 
+# def sort_array(arr):
+#     sorted_arr = []
+#     unsorted_arr = arr
+#     while len(unsorted_arr) > 0:
+#         smallest = unsorted_arr[0]
+#         for i in unsorted_arr:"

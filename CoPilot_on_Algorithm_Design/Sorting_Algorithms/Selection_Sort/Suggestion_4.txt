@@ -1,0 +1,397 @@
+"Synthesizing 10/10 solutions (Duplicates hidden)
+
+=======
+
+# 1: Iterate through the unsorted list.
+# 2: Compare the current element to the sorted list.
+# 3: If the current element is smaller than the sorted list, move the sorted list one position up to make space for the current element.
+# 4: Add the current element to the sorted list.
+# 5: Repeat the process until the unsorted list is empty.
+# source https://www.geeksforgeeks.org/insertion-sort-on-singly-linked-list/?ref=lbp - accessed on 30/03/2022
+# import random
+# 
+# 
+# class Node:
+#     def __init__(self, data):
+#         self.data = data
+#         self.next = None
+# 
+# 
+# class LinkedList:
+#     def __init__(self):
+#         self.head = None
+# 
+#     def push(self, new_data):
+#         new_node = Node(new_data)
+#         new_node.next = self.head
+#         self.head = new_node
+# 
+#     def print_list(self):
+#         temp = self.head
+#         while temp:
+#             print(temp.data, end="" "")
+#             temp = temp.next
+# 
+# 
+# def insertion_sort(head):
+#     if head is None:
+#         return None
+#     sorted_list = Node(head.data)
+#     head = head.next
+#     while head:
+#         new_node = Node(head.data)
+#         temp = sorted_list
+#         while temp.next and temp.next.data < new_node.data:
+#             temp = temp.next
+#         new_node.next = temp.next
+#         temp.next = new_node
+#         head = head.next
+#     return sorted_list
+# 
+# 
+# if __name__ == ""__main__"":
+#     llist = LinkedList()
+#     llist.push(10)
+#     llist.push(20)
+#     llist.push(30)
+#     llist
+
+=======
+
+# 1: Iterate through the unsorted list.
+# 2: Compare the current element to the sorted list.
+# 3: If the current element is smaller than the sorted list, move the sorted list one position to the right and insert the current element.
+# 4: If the current element is larger than the sorted list, move the sorted list one position to the right and insert the current element.
+# 5: Repeat until the unsorted list is empty.
+# source https://www.geeksforgeeks.org/insertion-sort-on-singly-linked-list/?ref=lbp - accessed on 30/03/2022
+# import random
+# 
+# 
+# class Node:
+#     def __init__(self, data):
+#         self.data = data
+#         self.next = None
+# 
+# 
+# class LinkedList:
+#     def __init__(self):
+#         self.head = None
+# 
+#     def push(self, new_data):
+#         new_node = Node(new_data)
+#         new_node.next = self.head
+#         self.head = new_node
+# 
+#     def print_list(self):
+#         temp = self.head
+#         while temp:
+#             print(temp.data, end="" "")
+#             temp = temp.next
+# 
+# 
+# def insertion_sort(llist):
+#     # 1: Iterate through the unsorted list.
+#     temp = llist.head
+#     while temp:
+#         # 2: Compare the current element to the sorted list.
+#         key = temp.data
+#         j = temp.next
+#         while j:
+#             # 3: If the current element is smaller than the sorted list, move the sorted list one position to the right and insert the current element.
+#             if key < j.data:
+#                 temp.next = j.next
+#                 j.next = temp
+#                 temp = j
+#                 break
+#             # 4: If the current element is larger than the sorted list, move the sorted list one position to the right and insert the current element.
+#             elif
+
+=======
+
+# 1: Iterate through the unsorted list.
+# 2: Compare the current element to the sorted list.
+# 3: If the current element is smaller than the sorted list, move the sorted list one position to the right and insert the current element.
+# 4: If the current element is larger than the sorted list, move the sorted list one position to the right and insert the current element.
+# 5: Repeat until the unsorted list is empty.
+# source https://www.geeksforgeeks.org/insertion-sort-on-singly-linked-list/?ref=lbp - accessed on 30/03/2022
+# import random
+# 
+# 
+# class Node:
+#     def __init__(self, data):
+#         self.data = data
+#         self.next = None
+# 
+# 
+# class LinkedList:
+#     def __init__(self):
+#         self.head = None
+# 
+#     def push(self, new_data):
+#         new_node = Node(new_data)
+#         new_node.next = self.head
+#         self.head = new_node
+# 
+#     def print_list(self):
+#         temp = self.head
+#         while temp:
+#             print(temp.data, end="" "")
+#             temp = temp.next
+# 
+# 
+# def insertion_sort(llist):
+#     # 1: Iterate through the unsorted list.
+#     temp = llist.head
+#     while temp:
+#         # 2: Compare the current element to the sorted list.
+#         key = temp.data
+#         j = temp.next
+#         while j:
+#             # 3: If the current element is smaller than the sorted list, move the sorted list one position to the right and insert the current element.
+#             if key < j.data:
+#                 temp.next = j.next
+#                 j.next = temp
+#                 temp = j
+#                 break
+#             # 4: If the current element is larger than the sorted list, move the sorted list one position to the right and insert the current element.
+#             else:
+
+=======
+
+# 1: Iterate through the unsorted list.
+# 2: Compare the current element to the sorted list.
+# 3: If the current element is smaller than the sorted list, move the sorted list one position to the right and insert the current element.
+# 4: If the current element is larger than the sorted list, move the sorted list one position to the right and insert the current element.
+# 5: Repeat until the unsorted list is empty.
+# source https://www.geeksforgeeks.org/insertion-sort-on-singly-linked-list/?ref=lbp - accessed on 30/03/2022
+# import random
+# 
+# 
+# class Node:
+#     def __init__(self, data):
+#         self.data = data
+#         self.next = None
+# 
+# 
+# class LinkedList:
+#     def __init__(self):
+#         self.head = None
+# 
+#     def push(self, new_data):
+#         new_node = Node(new_data)
+#         new_node.next = self.head
+#         self.head = new_node
+# 
+#     def print_list(self):
+#         temp = self.head
+#         while temp:
+#             print(temp.data, end="" "")
+#             temp = temp.next
+# 
+# 
+# def insertion_sort(head):
+#     if head is None:
+#         return None
+#     sorted_list = Node(head.data)
+#     head = head.next
+#     while head:
+#         if head.data < sorted_list.data:
+#             temp = sorted_list
+#             sorted_list = Node(head.data)
+#             sorted_list.next = temp
+#         else:
+#             temp = sorted_list
+#             while temp.next and temp.next.data < head.data:
+#                 temp = temp.next
+#             temp.next = Node(head.data)
+#             temp.next.next = temp.next
+#         head = head.next
+#     return sorted_list
+# 
+# 
+# if __
+
+=======
+
+# 1: Iterate through the unsorted list.
+# 2: Compare the current element to the sorted list.
+# 3: If the current element is smaller than the sorted list, move the sorted list one position to the right and insert the current element.
+# 4: If the current element is larger than the sorted list, move the sorted list one position to the right and insert the current element.
+# 5: Repeat until the unsorted list is empty.
+# source https://www.geeksforgeeks.org/insertion-sort-on-singly-linked-list/?ref=lbp - accessed on 30/03/2022
+# import random
+# 
+# 
+# class Node:
+#     def __init__(self, data):
+#         self.data = data
+#         self.next = None
+# 
+# 
+# class LinkedList:
+#     def __init__(self):
+#         self.head = None
+# 
+#     def push(self, new_data):
+#         new_node = Node(new_data)
+#         new_node.next = self.head
+#         self.head = new_node
+# 
+#     def print_list(self):
+#         temp = self.head
+#         while temp:
+#             print(temp.data, end="" "")
+#             temp = temp.next
+# 
+# 
+# def insertion_sort(head):
+#     # 1: Iterate through the unsorted list.
+#     # 2: Compare the current element to the sorted list.
+#     # 3: If the current element is smaller than the sorted list, move the sorted list one position to the right and insert the current element.
+#     # 4: If the current element is larger than the sorted list, move the sorted list one position to the right and insert the current element.
+#     # 5: Repeat until the unsorted list is empty.
+#     # ! psuedo code below was generated by CoPilot AFTER function was created.
+#     # psudeo code:
+#     # while unsorted list is not empty:
+#     #     current element = unsorted list
+#     #     sorted list = sorted list
+#
+
+=======
+
+# 1: Iterate through the unsorted list.
+# 2: Compare the current element to the sorted list.
+# 3: If the current element is smaller than the sorted list, move the sorted list one position to the right and insert the current element.
+# 4: If the current element is larger than the sorted list, move the sorted list one position to the right and insert the current element.
+# 5: Repeat until the unsorted list is empty.
+# source https://www.geeksforgeeks.org/insertion-sort-on-singly-linked-list/?ref=lbp - accessed on 30/03/2022
+# import random
+# 
+# 
+# class Node:
+#     def __init__(self, data):
+#         self.data = data
+#         self.next = None
+# 
+# 
+# class LinkedList:
+#     def __init__(self):
+#         self.head = None
+# 
+#     def push(self, new_data):
+#         new_node = Node(new_data)
+#         new_node.next = self.head
+#         self.head = new_node
+# 
+#     def print_list(self):
+#         temp = self.head
+#         while temp:
+#             print(temp.data, end="" "")
+#             temp = temp.next
+# 
+# 
+# def insertion_sort(head):
+#     # 1: Iterate through the unsorted list.
+#     # 2: Compare the current element to the sorted list.
+#     # 3: If the current element is smaller than the sorted list, move the sorted list one position to the right and insert the current element.
+#     # 4: If the current element is larger than the sorted list, move the sorted list one position to the right and insert the current element.
+#     # 5: Repeat until the unsorted list is empty.
+#     # ! psuedo code below was generated by CoPilot AFTER function was created.
+#     # psudeo code:
+#     # while unsorted list is not empty:
+#     #     current element = unsorted list[0]
+#     #     sorted list = sorted list
+
+=======
+
+# 1: Iterate through the unsorted list.
+# 2: Compare the current element to the sorted list.
+# 3: If the current element is smaller than the sorted list, move the sorted list one position to the right and insert the current element.
+# 4: If the current element is larger than the sorted list, move the sorted list one position to the right and insert the current element.
+# 5: Repeat until the unsorted list is empty.
+# source https://www.geeksforgeeks.org/insertion-sort-on-singly-linked-list/?ref=lbp - accessed on 30/03/2022
+# import random
+# 
+# 
+# class Node:
+#     def __init__(self, data):
+#         self.data = data
+#         self.next = None
+# 
+# 
+# class LinkedList:
+#     def __init__(self):
+#         self.head = None
+# 
+#     def push(self, new_data):
+#         new_node = Node(new_data)
+#         new_node.next = self.head
+#         self.head = new_node
+# 
+#     def print_list(self):
+#         temp = self.head
+#         while temp:
+#             print(temp.data, end="" "")
+#             temp = temp.next
+# 
+# 
+# def insertion_sort(llist):
+#     # 1: Iterate through the unsorted list.
+#     temp = llist.head
+#     while temp:
+#         # 2: Compare the current element to the sorted list.
+#         key = temp.data
+#         j = temp.next
+#         while j and key < j.data:
+#             # 3: If the current element is smaller than the sorted list, move the sorted list one position to the right and insert the current element.
+#             temp.next = j.next
+#             j.next = temp
+#             temp = temp.next
+#             j = temp.next
+#         # 4: If the current element is larger than the sorted list, move the sorted list one position to the right and insert the current element.
+#
+
+=======
+
+# 1: Iterate through the unsorted list.
+# 2: Compare the current element to the sorted list.
+# 3: If the current element is smaller than the sorted list, move the sorted list one position to the right and insert the current element.
+# 4: If the current element is larger than the sorted list, move the sorted list one position to the right and insert the current element.
+# 5: Repeat until the unsorted list is empty.
+# source https://www.geeksforgeeks.org/insertion-sort-on-singly-linked-list/?ref=lbp - accessed on 30/03/2022
+# import random
+# 
+# 
+# class Node:
+#     def __init__(self, data):
+#         self.data = data
+#         self.next = None
+# 
+# 
+# class LinkedList:
+#     def __init__(self):
+#         self.head = None
+# 
+#     def push(self, new_data):
+#         new_node = Node(new_data)
+#         new_node.next = self.head
+#         self.head = new_node
+# 
+#     def print_list(self):
+#         temp = self.head
+#         while temp:
+#             print(temp.data, end="" "")
+#             temp = temp.next
+# 
+# 
+# def insertion_sort(llist):
+#     # 1: Iterate through the unsorted list.
+#     # 2: Compare the current element to the sorted list.
+#     # 3: If the current element is smaller than the sorted list, move the sorted list one position to the right and insert the current element.
+#     # 4: If the current element is larger than the sorted list, move the sorted list one position to the right and insert the current element.
+#     # 5: Repeat until the unsorted list is empty.
+#     # psuedo code:
+#     # while unsorted list is not empty:
+#     #     current = unsorted list
+#     #     sorted list = sorted list
+#     #     while current is not at the head of the sorted list and current is smaller than the current node"
