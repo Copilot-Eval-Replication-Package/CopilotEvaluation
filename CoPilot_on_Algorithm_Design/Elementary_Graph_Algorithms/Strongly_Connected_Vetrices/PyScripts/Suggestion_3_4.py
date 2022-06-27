@@ -1,0 +1,50 @@
+
+
+def dfs_cycle(self, s):
+        self.visited[s] = True
+        for i in self.graph[s]:
+            if self.visited[i] == False:
+                if self.dfs_cycle(i) == True:
+                    return True
+            elif self.visited[i] == True:
+                return True
+        return False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable(self, s, d):
+        self.visited = [False] * self.V
+        if self.dfs_cycle(s) == True:
+            return False
+        return True
+
+    # create a function that checks if a graph is strongly connected or not.
+    # ! buggy code same as others
+    def is_strongly_connected(self):
+        self.visited = [False] * self.V
+        for i in range(self.V):
+            if self.visited[i] == False:
+                self.dfs_util(i)
+        self.visited = [False] * self.V
+        for i in range(self.V - 1, -1, -1):
+            if self.visited[i] == False:
+                self.dfs_util(i)
+        for i in range(self.V):
+            if self.visited[i] == False:
+                return False
+        return True
+
+    # create a function that returns the number of strongly connected components in the graph.
+    # ! buggy code same as others
+    def strongly_connected_components(self):
+        count = 0
+        self.visited = [False] * self.V
+        for i in range(self.V):
+            if self.visited[i] == False:
+                self.dfs_util(i)
+                count += 1
+        self.visited = [False] * self.V
+        for i in range(self.V - 1, -1, -1):
+            if self.visited[i] == False:
+                self.dfs_util(i)
+        return count
+

@@ -1,0 +1,567 @@
+"Synthesizing 10/10 solutions
+
+=======
+
+def dfs_cycle(self, s):
+        self.visited[s] = True
+        for i in self.graph[s]:
+            if self.visited[i] == False:
+                if self.dfs_cycle(i) == True:
+                    return True
+            elif self.visited[i] == True:
+                return True
+        return False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable(self, s, d):
+        self.visited = [False] * self.V
+        if self.dfs_cycle(s) == True:
+            return False
+        else:
+            return True
+    # create a function that checks if the graph is a dag. if it is a dag it returns true otherwise false.
+    def is_dag(self):
+        self.visited = [False] * self.V
+        for i in range(self.V):
+            if self.visited[i] == False:
+                if self.dfs_cycle(i) == True:
+                    return False
+        return True
+
+    # create a function that checks if the graph is a DAG. if it is a DAG it returns true otherwise false.
+    def is_dag_util(self, s):
+        self.visited[s] = True
+        for i in self.graph[s]:
+            if self.visited[i] == False:
+                if self.dfs_cycle(i) == True:
+                    return False
+        return True
+
+    def dfs_topological_sort_util(self):
+        self.visited = [False] * self.V
+        for i in range(self.V):
+            if self.visited[i] == False:
+                if self.dfs_cycle(i) == True:
+                    return False
+        return True
+
+    def dfs_topological_sort(self):
+        self.visited = [False] * self.V
+        for i in range(self.V):
+            if self.visited[i] == False:
+                if self.dfs_cycle(i) == True:
+                    return False
+        return True
+
+    # create a function that checks if the graph is a DAG. if it is a DAG it returns true otherwise false.
+    def is_dag(self):
+        self.visited = [False] * self.V
+        for i in range(self.V):
+            if self.visited[i] == False:
+                if self.dfs_cycle(i) == True:
+                    return False
+        return
+
+=======
+
+def dfs_cycle(self, s):
+        self.visited[s] = True
+        for i in self.graph[s]:
+            if self.visited[i] == False:
+                if self.dfs_cycle(i) == True:
+                    return True
+            elif self.visited[i] == True:
+                return True
+        return False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable(self, s, d):
+        self.visited = [False] * self.V
+        if self.dfs_cycle(s):
+            return False
+        else:
+            return True if self.dfs_cycle(d) else False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable_util(self, s, d):
+        self.visited = [False] * self.V
+        if self.dfs_cycle(s):
+            return False
+        else:
+            return True if self.dfs_cycle(d) else False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable_util_topological_sort(self, s, d):
+        self.visited = [False] * self.V
+        if self.dfs_cycle(s):
+            return False
+        else:
+            return True if self.dfs_cycle(d) else False
+
+    def is_reachable_util_topological_sort(self, s, d):
+        self.visited = [False] * self.V
+        if self.dfs_cycle(s):
+            return False
+        else:
+            return True if self.dfs_cycle(d) else False
+
+    def is_reachable_util_topological_sort(self, s, d):
+        self.visited = [False] * self.V
+        if self.dfs_cycle(s):
+            return False
+        else:
+            return True if self.dfs_cycle(d) else False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable_util_topological_sort(self, s, d):
+        self.visited = [False] * self.V
+        if self.dfs_cycle(s):
+            return False
+        else:
+            return True if self.dfs
+
+=======
+
+def dfs_cycle(self, s):
+        self.visited[s] = True
+        for i in self.graph[s]:
+            if self.visited[i] == False:
+                if self.dfs_cycle(i) == True:
+                    return True
+            elif self.visited[i] == True:
+                return True
+        return False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable(self, s, d):
+        self.visited = [False] * self.V
+        if self.dfs_cycle(s) == True:
+            return False
+        return True if self.dfs_cycle(d) == True else False
+
+    # create a function that finds the shortest path between two vertices.
+    def shortest_path(self, s, d):
+        # ! what is the purpose of this function?
+        self.visited = [False] * self.V
+        self.parent = [None] * self.V
+        self.parent[s] = -1
+        self.dfs_util(s)
+        self.visited = [False] * self.V
+        self.parent = [None] * self.V
+        self.parent[d] = -1
+        self.dfs_util(d)
+        self.visited = [False] * self.V
+        self.parent = [None] * self.V
+        self.parent[s] = -1
+        self.dfs_util(s)
+        self.visited = [False] * self.V
+        self.parent = [None] * self.V
+        self.parent[d] = -1
+        self.dfs_util(d)
+        self.visited = [False] * self.V
+        self.parent = [None] * self.V
+        self.parent[s] = -1
+        self.dfs_util(s)
+        self.visited = [False] * self.V
+        self.parent = [None] * self.V
+        self.parent[d] = -1
+        self.dfs_util(d)
+        print(""shortest path: "", end="""")
+        self.print_path(d)
+        print(""\n"")
+
+    def print_path(self, d):
+        if self.parent[d] == -1:
+            print(d, end="" "")
+            return
+        self.print_path(self.parent[d])
+        print(d, end="" "")
+
+    # create a function that finds the shortest
+
+=======
+
+def dfs_cycle(self, s):
+        self.visited[s] = True
+        for i in self.graph[s]:
+            if self.visited[i] == False:
+                if self.dfs_cycle(i) == True:
+                    return True
+            elif self.visited[i] == True:
+                return True
+        return False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable(self, s, d):
+        self.visited = [False] * self.V
+        if self.dfs_cycle(s) == True:
+            return False
+        return True
+
+    # create a function that checks if a graph is strongly connected or not.
+    # ! buggy code same as others
+    def is_strongly_connected(self):
+        self.visited = [False] * self.V
+        for i in range(self.V):
+            if self.visited[i] == False:
+                self.dfs_util(i)
+        self.visited = [False] * self.V
+        for i in range(self.V - 1, -1, -1):
+            if self.visited[i] == False:
+                self.dfs_util(i)
+        for i in range(self.V):
+            if self.visited[i] == False:
+                return False
+        return True
+
+    # create a function that returns the number of strongly connected components in the graph.
+    # ! buggy code same as others
+    def strongly_connected_components(self):
+        count = 0
+        self.visited = [False] * self.V
+        for i in range(self.V):
+            if self.visited[i] == False:
+                self.dfs_util(i)
+                count += 1
+        self.visited = [False] * self.V
+        for i in range(self.V - 1, -1, -1):
+            if self.visited[i] == False:
+                self.dfs_util(i)
+        return count
+
+=======
+
+def dfs_cycle(self, s):
+        self.visited[s] = True
+        for i in self.graph[s]:
+            if self.visited[i] == False:
+                if self.dfs_cycle(i) == True:
+                    return True
+            elif self.visited[i] == True:
+                return True
+        return False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable(self, s, d):
+        self.visited = [False] * self.V
+        if self.dfs(s) == True:
+            if self.dfs(d) == True:
+                return True
+        return False
+
+    # ! what is the purpose of this function?
+    def is_cycle(self):
+        self.visited = [False] * self.V
+        for i in range(self.V):
+            if self.visited[i] == False:
+                if self.dfs_cycle(i) == True:
+                    return True
+        return False
+
+    def bfs(self, s):
+        queue = []
+        queue.append(s)
+        self.visited[s] = True
+        while queue:
+            s = queue.pop(0)
+            print(s, end="" "")
+            for i in self.graph[s]:
+                if self.visited[i] == False:
+                    queue.append(i)
+                    self.visited[i] = True
+
+    def bfs_topological_sort(self):
+        self.visited = [False] * self.V
+        for i in range(self.V):
+            if self.visited[i] == False:
+                self.bfs(i)
+
+    # ! what is the purpose of this function?
+    def bfs_cycle(self, s):
+        queue = []
+        queue.append(s)
+        self.visited[s] = True
+        while queue:
+            s = queue.pop(0)
+            for i in self.graph[s]:
+                if self.visited[i] == False:
+                    queue.append(i)
+                    self.visited[i] = True
+                elif self.visited[i] == True:
+                    return True
+        return False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable_bfs(self, s, d):
+        self.visited = [False] * self.V
+        if self
+
+=======
+
+def dfs_cycle(self, s):
+        self.visited[s] = True
+        for i in self.graph[s]:
+            if self.visited[i] == False:
+                if self.dfs_cycle(i) == True:
+                    return True
+            elif self.visited[i] == True:
+                return True
+        return False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable(self, s, d):
+        if self.dfs_cycle(s) == True:
+            return False
+        self.visited = [False] * self.V
+        self.dfs(s)
+        return True if self.visited[d] == True else False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable_util(self, s, d):
+        self.visited = [False] * self.V
+        self.dfs(s)
+        return True if self.visited[d] == True else False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable_topological_sort(self, s, d):
+        self.visited = [False] * self.V
+        self.dfs_topological_sort()
+        return True if self.visited[d] == True else False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable_topological_sort_util(self, s, d):
+        self.visited = [False] * self.V
+        self.dfs_topological_sort()
+        return True if self.visited[d] == True else False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable_topological_sort_util_2(self, s, d):
+        self.visited = [False] * self.V
+        self.dfs_topological_sort()
+        return True if self.visited[d] == True else False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable_topological_sort_util_3(self, s, d):
+        self.visited
+
+=======
+
+def dfs_cycle(self, s):
+        self.visited[s] = True
+        for i in self.graph[s]:
+            if self.visited[i] == False:
+                if self.dfs_cycle(i) == True:
+                    return True
+            elif self.visited[i] == True:
+                return True
+        return False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable(self, s, e):
+        self.visited = [False] * self.V
+        if self.dfs_cycle(s) == True:
+            return False
+        self.visited = [False] * self.V
+        return True if self.dfs_cycle(e) == False else False
+
+    def is_cyclic(self):
+        self.visited = [False] * self.V
+        for i in range(self.V):
+            if self.visited[i] == False:
+                if self.dfs_cycle(i) == True:
+                    return True
+        return False
+
+    # create a function that checks if there is a path between two vertices. if there is a path, the function returns true otherwise false.
+    def is_path(self, s, e):
+        self.visited = [False] * self.V
+        if self.dfs_cycle(s) == True:
+            return False
+        self.visited = [False] * self.V
+        return True if self.dfs_cycle(e) == False else False
+
+    # create a function that returns the number of connected components in a graph.
+    def connected_components(self):
+        self.visited = [False] * self.V
+        count = 0
+        for i in range(self.V):
+            if self.visited[i] == False:
+                self.dfs(i)
+                count += 1
+        return count
+
+    # create a function that returns the number of connected components in a graph.
+    def is_connected(self, s, e):
+        self.visited = [False] * self.V
+        if self.dfs_cycle(s) == True:
+            return False
+        self.visited = [False] * self.V
+        return True if self.dfs_cycle(e) == False else False
+
+    # create a function that returns the number of connected components in a graph.
+    def is_bridged(self, s, e):
+        self.visited = [False] * self.V
+        if self.dfs_cycle(s) ==
+
+=======
+
+def dfs_cycle(self, s):
+        self.visited[s] = True
+        for i in self.graph[s]:
+            if self.visited[i] == False:
+                if self.dfs_cycle(i) == True:
+                    return True
+            elif self.visited[i] == True:
+                return True
+        return False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable(self, s, v):
+        self.visited = [False] * self.V
+        if self.dfs(s) == True:
+            return True
+        return False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable_util(self, s, v):
+        self.visited = [False] * self.V
+        if self.dfs_util(s) == True:
+            return True
+        return False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable_topological_sort(self):
+        self.visited = [False] * self.V
+        for i in range(self.V):
+            if self.visited[i] == False:
+                if self.dfs_util(i) == True:
+                    return True
+        return False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable_cycle(self, s, v):
+        self.visited = [False] * self.V
+        if self.dfs_cycle(s) == True:
+            return True
+        return False
+
+=======
+
+def dfs_cycle(self, s):
+        self.visited[s] = True
+        for i in self.graph[s]:
+            if self.visited[i] == False:
+                if self.dfs_cycle(i) == True:
+                    return True
+            elif self.visited[i] == True:
+                return True
+        return False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable(self, s, v):
+        if self.dfs_cycle(s) == True:
+            return False
+        self.visited = [False] * self.V
+        self.dfs(s)
+        if self.visited[v] == True:
+            return True
+        else:
+            return False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable_util(self, s, v):
+        if self.dfs_cycle(s) == True:
+            return False
+        self.visited = [False] * self.V
+        self.dfs(s)
+        if self.visited[v] == True:
+            return True
+        else:
+            return False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable_topological_sort(self, s, v):
+        if self.dfs_cycle(s) == True:
+            return False
+        self.visited = [False] * self.V
+        self.dfs_topological_sort()
+        if self.visited[v] == True:
+            return True
+        else:
+            return False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable_topological_sort_util(self, s, v):
+        if self.dfs_cycle(s) == True:
+            return False
+        self.visited = [False] * self.V
+        self.dfs_topological_sort()
+        if self.visited[v] == True:
+            return True
+        else:
+            return False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable_topological_sort_util_2(self, s, v):
+        if self.dfs_cycle
+
+=======
+
+def dfs_cycle(self, s):
+        self.visited[s] = True
+        for i in self.graph[s]:
+            if self.visited[i] == False:
+                if self.dfs_cycle(i) == True:
+                    return True
+            elif self.visited[i] == True:
+                return True
+        return False
+
+    # create a function that checks if two vetrices are reachable from each other. if they are the  function returns true otherwise false.
+    def is_reachable(self, u, v):
+        self.visited = [False] * self.V
+        return self.dfs_cycle(u)
+
+    def is_path(self, u, v):
+        self.visited = [False] * self.V
+        return self.dfs_cycle(u)
+
+    # create a function that checks if the graph is a dag or not.
+    def is_dag(self):
+        self.visited = [False] * self.V
+        for i in range(self.V):
+            if self.visited[i] == False:
+                if self.dfs_cycle(i) == True:
+                    return False
+        return True
+
+    # create a function that returns the number of connected components in the graph.
+    def count_connected_components(self):
+        self.visited = [False] * self.V
+        count = 0
+        for i in range(self.V):
+            if self.visited[i] == False:
+                self.dfs_util(i)
+                count += 1
+        return count
+
+    def dfs_topological_sort_util(self, s):
+        self.visited[s] = True
+        for i in self.graph[s]:
+            if self.visited[i] == False:
+                self.dfs_topological_sort_util(i)
+        print(s, end="" "")
+
+    def dfs_topological_sort_util_2(self, s):
+        self.visited[s] = True
+        self.topological_sort.append(s)
+        for i in self.graph[s]:
+            if self.visited[i] == False:
+                self.dfs_topological_sort_util_2(i)
+
+    def dfs_topological_sort_util_3(self, s):
+        self.visited[s] = True
+        self.topological_sort.append(s)
+        for i in self.graph[s]:
+            if self.visited[i] == False:
+                self.dfs_topological_sort"
