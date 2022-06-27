@@ -1,0 +1,186 @@
+Synthesizing 10/10 solutions
+
+=======
+
+class Set:
+    def __init__(self):
+        self.activities = []
+
+    def add(self, activity):
+        if len(self.activities) == 0:
+            self.activities.append(activity)
+        else:
+            if activity.start_time >= self.activities[-1].end_time:
+                self.activities.append(activity)
+            else:
+                for i in range(len(self.activities)):
+                    if check_overlap(self.activities[i], activity):
+                        break
+                else:
+                    self.activities.append(activity)
+        self.activities.sort(key=lambda x: x.end_time)
+
+    def __str__(self):
+        return str(self.activities)
+
+=======
+
+class Set:
+    def __init__(self):
+        self.activities = []
+
+    def add_activity(self, activity):
+        self.activities.append(activity)
+        self.activities.sort(key=lambda activity: activity.end_time)
+
+    def __repr__(self):
+        return str(self.activities)
+
+=======
+
+class Set:
+    def __init__(self):
+        self.activities = []
+
+    def add_activity(self, activity):
+        self.activities.append(activity)
+        self.activities.sort(key=lambda activity: activity.end_time)
+
+    def __str__(self):
+        return str(self.activities)
+
+=======
+
+class Set:
+    def __init__(self):
+        self.activities = []
+
+    def add_activity(self, activity):
+        self.activities.append(activity)
+        self.activities.sort(key=lambda x: x.end_time)
+
+=======
+
+class Set:
+    def __init__(self):
+        self.activities = []
+
+    def add(self, activity):
+        if self.activities == []:
+            self.activities.append(activity)
+        else:
+            for i in range(len(self.activities)):
+                if check_overlap(activity, self.activities[i]):
+                    return
+            self.activities.append(activity)
+            self.activities.sort(key=lambda x: x.end_time)
+
+=======
+
+class Set:
+    def __init__(self):
+        self.activities = []
+
+    def add_activity(self, activity):
+        if self.activities == []:
+            self.activities.append(activity)
+        else:
+            for i in range(len(self.activities)):
+                if activity.start_time >= self.activities[i].end_time:
+                    self.activities.insert(i, activity)
+                    break
+            else:
+                self.activities.append(activity)
+
+    def __str__(self):
+        return str(self.activities)
+
+=======
+
+class Set:
+    def __init__(self):
+        self.activities = []
+
+    def add_activity(self, activity):
+        if self.activities == []:
+            self.activities.append(activity)
+        else:
+            for i in range(len(self.activities)):
+                if activity.start_time >= self.activities[i].end_time:
+                    self.activities.insert(i, activity)
+                    break
+                elif i == len(self.activities) - 1:
+                    self.activities.append(activity)
+                    break
+                else:
+                    continue
+        return self.activities
+
+    def print_activities(self):
+        for activity in self.activities:
+            print(f"Activity start time: {activity.start_time}")
+            print(f"Activity end time: {activity.end_time}")
+            print("\n")
+        return self.activities
+
+=======
+
+class Set:
+    def __init__(self):
+        self.activities = []
+
+    def add(self, activity):
+        if self.activities == []:
+            self.activities.append(activity)
+        else:
+            last_activity = self.activities[-1]
+            if last_activity.end_time < activity.start_time:
+                self.activities.append(activity)
+            else:
+                if check_overlap(last_activity, activity):
+                    raise OverlapError
+                else:
+                    raise NonOverlapError
+
+    def __repr__(self):
+        return str(self.activities)
+
+=======
+
+class Set:
+    def __init__(self, activities):
+        self.activities = activities
+
+    def add_activity(self, activity):
+        if len(self.activities) == 0:
+            self.activities.append(activity)
+        else:
+            for i in range(len(self.activities)):
+                if check_overlap(activity, self.activities[i]):
+                    print("Activity overlaps with another activity in the set")
+                    return False
+            self.activities.append(activity)
+            self.activities.sort(key=lambda x: x.end_time)
+        return True
+
+    def get_activities(self):
+        return self.activities
+
+=======
+
+class Set:
+    def __init__(self, activities):
+        self.activities = activities
+
+    def add_activity(self, activity):
+        self.activities.append(activity)
+        self.activities = sorted(self.activities, key=lambda activity: activity.end_time)
+
+    def is_valid(self, activity):
+        for i in self.activities:
+            if check_overlap(i, activity):
+                return False
+        return True
+
+    def __str__(self):
+        return str(self.activities)
