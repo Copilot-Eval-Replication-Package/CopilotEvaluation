@@ -1,0 +1,15 @@
+Suggestion_4_1.py,Suggestion_4_2.py,0.3936
+Suggestion_4_1.py,Suggestion_5_1.py,0.3936
+Suggestion_4_1.py,Suggestion_6_1.py,0.1828
+Suggestion_4_2.py,comparison_results.csv,0
+Suggestion_4_2.py,Suggestion_4_1.py,0.3936
+Suggestion_4_2.py,Suggestion_5_1.py,1
+Suggestion_4_2.py,Suggestion_6_1.py,0.4288
+Suggestion_5_1.py,comparison_results.csv,0
+Suggestion_5_1.py,Suggestion_4_1.py,0.3936
+Suggestion_5_1.py,Suggestion_4_2.py,1
+Suggestion_5_1.py,Suggestion_6_1.py,0.4288
+Suggestion_6_1.py,comparison_results.csv,0
+Suggestion_6_1.py,Suggestion_4_1.py,0.1828
+Suggestion_6_1.py,Suggestion_4_2.py,0.4288
+Suggestion_6_1.py,Suggestion_5_1.py,0.4288

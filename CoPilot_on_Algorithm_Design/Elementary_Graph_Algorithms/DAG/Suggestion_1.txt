@@ -1,0 +1,968 @@
+"Synthesizing 10/10 solutions
+
+=======
+
+# class DAG:
+#     def __init__(self, vertices):
+#         self.V = vertices
+#         self.graph = [None] * self.V
+#         for i in range(self.V):
+#             self.graph[i] = []
+# 
+#     def add_edge(self, u, v):
+#         self.graph[u].append(v)
+# 
+#     def is_connected(self, u, v):
+#         return True if v in self.graph[u] else False
+# 
+#     def print_graph(self):
+#         for i in range(self.V):
+#             print(i, ""-->"", self.graph[i])
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex.
+#     # ! faulty code
+#     def dfs(self, s):
+#         visited = [False] * self.V
+#         self.dfs_util(s, visited)
+# 
+#     def dfs_util(self, s, visited):
+#         visited[s] = True
+#         print(s, end="" "")
+#         for i in self.graph[s]:
+#             if visited[i] == False:
+#                 self.dfs_util(i, visited)
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex in a depth-first manner.
+#     # ! faulty code
+#     def dfs_distance(self, s, d):
+#         visited = [False] * self.V
+#         distance = [0] * self.V
+#         self.dfs_util_distance(s, d, visited, distance)
+# 
+#     def dfs_util_distance(self, s, d, visited, distance):
+#         visited[s] = True
+#         for i in self.graph[s]:
+#             if visited[i] == False:
+#                 distance[i] = distance[s] + 1
+#                 if i == d:
+#                     return distance[
+
+=======
+
+# class DAG:
+#     def __init__(self, vertices):
+#         self.V = vertices
+#         self.graph = [None] * self.V
+#         for i in range(self.V):
+#             self.graph[i] = []
+# 
+#     def add_edge(self, u, v):
+#         self.graph[u].append(v)
+# 
+#     def is_connected(self, u, v):
+#         return True if v in self.graph[u] else False
+# 
+#     def print_graph(self):
+#         for i in range(self.V):
+#             print(i, ""-->"", self.graph[i])
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex.
+#     # ! faulty code
+#     def dfs(self, s):
+#         visited = [False] * self.V
+#         self.dfs_util(s, visited)
+# 
+#     def dfs_util(self, s, visited):
+#         visited[s] = True
+#         print(s, end="" "")
+#         for i in self.graph[s]:
+#             if visited[i] == False:
+#                 self.dfs_util(i, visited)
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex.
+#     # ! faulty code
+#     def bfs(self, s):
+#         visited = [False] * self.V
+#         queue = []
+#         queue.append(s)
+#         visited[s] = True
+#         while queue:
+#             s = queue.pop(0)
+#             print(s, end="" "")
+#             for i in self.graph[s]:
+#                 if (
+#                     visited[i] == False
+#                 ):  # ! if ""i"" is not a number, this will cause an error.
+#                     queue.append(i)
+#                     visited[i] = True
+# 
+#     # given
+
+=======
+
+# class DAG:
+#     def __init__(self, vertices):
+#         self.V = vertices
+#         self.graph = [None] * self.V
+#         for i in range(self.V):
+#             self.graph[i] = []
+# 
+#     def add_edge(self, u, v):
+#         self.graph[u].append(v)
+# 
+#     def is_connected(self, u, v):
+#         return True if v in self.graph[u] else False
+# 
+#     def print_graph(self):
+#         for i in range(self.V):
+#             print(i, ""-->"", self.graph[i])
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex.
+#     # ! faulty code
+#     def dfs(self, s):
+#         visited = [False] * self.V
+#         self.dfs_util(s, visited)
+# 
+#     def dfs_util(self, s, visited):
+#         visited[s] = True
+#         print(s, end="" "")
+#         for i in self.graph[s]:
+#             if visited[i] == False:
+#                 self.dfs_util(i, visited)
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex in a depth-first manner.
+#     # ! faulty code
+#     def dfs_distance(self, s, d):
+#         visited = [False] * self.V
+#         distance = [0] * self.V
+#         self.dfs_util_distance(s, visited, distance)
+# 
+#     def dfs_util_distance(self, s, visited, distance):
+#         visited[s] = True
+#         distance[s] = 0
+#         for i in self.graph[s]:
+#             if visited[i] == False:
+#                 self.dfs_util_distance(i, visited, distance)
+# 
+#
+
+=======
+
+class DAG:
+    def __init__(self, vertices):
+        self.V = vertices
+        self.graph = [None] * self.V
+        for i in range(self.V):
+            self.graph[i] = []
+        self.time = 0
+        self.visited = [False] * self.V
+
+    def add_edge(self, u, v):
+        self.graph[u].append(v)
+
+    def is_connected(self, u, v):
+        return True if v in self.graph[u] else False
+
+    def print_graph(self):
+        for i in range(self.V):
+            print(i, ""-->"", self.graph[i])
+
+    def dfs(self, s):
+        self.visited[s] = True
+        print(s, end="" "")
+        for i in self.graph[s]:
+            if self.visited[i] == False:
+                self.dfs(i)
+
+    def dfs_util(self, s):
+        self.visited[s] = True
+        print(s, end="" "")
+        for i in self.graph[s]:
+            if self.visited[i] == False:
+                self.dfs_util(i)
+
+    def dfs_topological_sort(self):
+        self.visited = [False] * self.V
+        for i in range(self.V):
+            if self.visited[i] == False:
+                self.dfs_util(i)
+
+    def dfs_cycle(self, s):
+        self.visited[s] = True
+        for i in self.graph[s]:
+            if self.visited[i] == False:
+                if self.dfs_cycle(i) == True:
+                    return True
+            elif self.visited[i] == True:
+                return True
+        return False
+
+    def dfs_topological_sort_util(self, s):
+        self.visited[s] = True
+        for i in self.graph[s]:
+            if self.visited[i] ==
+
+=======
+
+class DAG:
+    def __init__(self, vertices):
+        self.V = vertices
+        self.graph = [None] * self.V
+        for i in range(self.V):
+            self.graph[i] = []
+
+    def add_edge(self, u, v):
+        self.graph[u].append(v)
+
+    def is_connected(self, u, v):
+        return True if v in self.graph[u] else False
+
+    def print_graph(self):
+        for i in range(self.V):
+            print(i, ""-->"", self.graph[i])
+
+    # given a source vertex, return the list of all vertexes that can be reached from the source vertex.
+    # ! faulty code
+    def dfs(self, s):
+        visited = [False] * self.V
+        self.dfs_util(s, visited)
+
+    def dfs_util(self, s, visited):
+        visited[s] = True
+        print(s, end="" "")
+        for i in self.graph[s]:
+            if visited[i] == False:
+                self.dfs_util(i, visited)
+
+    # the distnce between two vertxes is the smallest number of edges that need to be traversed to get from one vertex to reach the other.
+    # create a fucntion that computes the distance between two vertxes and returns it.  if the vertxes are not reachable from each other, it should return 'not connected'.
+    # ! faulty code
+    def dfs_distance(self, s, d):
+        visited = [False] * self.V
+        distance = [0] * self.V
+        distance[s] = 0
+        self.dfs_util_distance(s, visited, distance)
+        if distance[d] == 0:
+            return ""not connected""
+        return distance[d]
+
+    def dfs_util_distance(self, s, visited, distance):
+        visited[s] = True
+        for i in self.graph[s]:
+            if visited[i] == False:
+                distance[i] = distance[s]
+
+=======
+
+# ! faulty code
+# class DAG:
+#     def __init__(self, vertices):
+#         self.V = vertices
+#         self.graph = [None] * self.V
+#         for i in range(self.V):
+#             self.graph[i] = []
+# 
+#     def add_edge(self, u, v):
+#         self.graph[u].append(v)
+# 
+#     def is_connected(self, u, v):
+#         return True if v in self.graph[u] else False
+# 
+#     def print_graph(self):
+#         for i in range(self.V):
+#             print(i, ""-->"", self.graph[i])
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex.
+#     # ! faulty code
+#     def dfs(self, s):
+#         visited = [False] * self.V
+#         self.dfs_util(s, visited)
+# 
+#     def dfs_util(self, s, visited):
+#         visited[s] = True
+#         print(s, end="" "")
+#         for i in self.graph[s]:
+#             if visited[i] == False:
+#                 self.dfs_util(i, visited)
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex in a depth-first manner.
+#     # ! faulty code
+#     def dfs_distance(self, s, d):
+#         visited = [False] * self.V
+#         distance = [0] * self.V
+#         self.dfs_distance_util(s, d, visited, distance)
+# 
+#     def dfs_distance_util(self, s, d, visited, distance):
+#         visited[s] = True
+#         distance[s] = 0
+#         for i in self.graph[s]:
+#             if visited[i] == False:
+#                 self.dfs_distance_util(i,
+
+=======
+
+# Compare this snippet from algorithm_design/elementry graph algorithms/dag.py:
+# # implement a graph structure.
+# class Graph:
+#     def __init__(self, vertices):
+#         self.V = vertices
+#         self.graph = [None] * self.V
+#         for i in range(self.V):
+#             self.graph[i] = []
+# 
+#     def add_edge(self, u, v):
+#         self.graph[u].append(v)
+# 
+#     def is_connected(self, u, v):
+#         return True if v in self.graph[u] else False
+# 
+#     def print_graph(self):
+#         for i in range(self.V):
+#             print(i, ""-->"", self.graph[i])
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex.
+#     # ! faulty code
+#     def dfs(self, s):
+#         visited = [False] * self.V
+#         self.dfs_util(s, visited)
+# 
+#     def dfs_util(self, s, visited):
+#         visited[s] = True
+#         print(s, end="" "")
+#         for i in self.graph[s]:
+#             if visited[i] == False:
+#                 self.dfs_util(i, visited)
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex in a depth-first manner.
+#     # ! faulty code
+#     def dfs_path(self, s, d):
+#         visited = [False] * self.V
+#         stack = []
+#         stack.append(s)
+#         visited[s] = True
+#         path = []
+#         while stack:
+#             s = stack.pop()
+#             path.append(s)
+#             if s == d:
+#                 return path
+#             for i in self.graph[s]:
+#                 if visited[i] == False
+
+=======
+
+# Compare this snippet from algorithm_design/elementry graph algorithms/dag.py:
+# # implement a graph structure.
+# class Graph:
+#     def __init__(self, vertices):
+#         self.V = vertices
+#         self.graph = [None] * self.V
+#         for i in range(self.V):
+#             self.graph[i] = []
+# 
+#     def add_edge(self, u, v):
+#         self.graph[u].append(v)
+# 
+#     def is_connected(self, u, v):
+#         return True if v in self.graph[u] else False
+# 
+#     def print_graph(self):
+#         for i in range(self.V):
+#             print(i, ""-->"", self.graph[i])
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex.
+#     # ! faulty code
+#     def dfs(self, s):
+#         visited = [False] * self.V
+#         self.dfs_util(s, visited)
+# 
+#     def dfs_util(self, s, visited):
+#         visited[s] = True
+#         print(s, end="" "")
+#         for i in self.graph[s]:
+#             if visited[i] == False:
+#                 self.dfs_util(i, visited)
+# 
+#     # the distnce between two vertxes is the smallest number of edges that need to be traversed to get from one vertex to reach the other.
+#     # create a fucntion that computes the distance between two vertxes and returns it.  if the vertxes are not reachable from each other, it should return 'not connected'.
+#     # ! faulty code
+#     def bfs_distance(self, s, d):
+#         visited = [False] * self.V
+#         queue = []
+#         queue.append(s)
+#         visited[s] = True
+#         distance = [0] * self.V
+#         distance[s] =
+
+=======
+
+# Compare this snippet from algorithm_design/elementry graph algorithms/dag.py:
+# # create a class that implements a directed acyclic graph data structure.
+# class DAG:
+#     def __init__(self, vertices):
+#         self.V = vertices
+#         self.graph = [None] * self.V
+#         for i in range(self.V):
+#             self.graph[i] = []
+# 
+#     def add_edge(self, u, v):
+#         self.graph[u].append(v)
+# 
+#     def is_connected(self, u, v):
+#         return True if v in self.graph[u] else False
+# 
+#     def print_graph(self):
+#         for i in range(self.V):
+#             print(i, ""-->"", self.graph[i])
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex.
+#     # ! faulty code
+#     def bfs(self, s):
+#         visited = [False] * self.V
+#         queue = []
+#         queue.append(s)
+#         visited[s] = True
+#         while queue:
+#             s = queue.pop(0)
+#             print(s, end="" "")
+#             for i in self.graph[s]:  # ! if ""i"" is not a number, this will cause an error.
+#                 if visited[i] == False:
+#                     queue.append(i)
+#                     visited[i] = True
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex in a depth-first manner.
+# Compare this snippet from algorithm_design/elementry graph algorithms/graph.py:
+# # create a class that implements a graph data structure.
+# class Graph:
+#     def __init__(self, vertices):
+#         self.V = vertices
+#         self.graph = [None] * self.V
+#         for i in range(self.V):
+#             self.
+
+=======
+
+# ! the class should contain the following methods:
+#     add_edge(u, v) - add an edge from vertex u to vertex v
+#     is_connected(u, v) - return True if vertex u is connected to vertex v, False otherwise
+#     print_graph() - print the graph
+#     topological_sort() - return a list of vertexes that can be reached from the source vertex in a depth-first manner.
+#     dfs_recursive(u) - perform a depth-first search recursively from vertex u to all other vertexes.
+#     dfs_iterative(u) - perform a depth-first search iteratively from vertex u to all other vertexes.
+#     bfs(u) - perform a breadth-first search from vertex u to all other vertexes.
+#     bfs_distance(u, d) - return the distance between vertex u and vertex d in a breadth-first search.
+#     shortest_path(u, d) - return the shortest path between vertex u and vertex d in a breadth-first search.
+#     dfs_path(u, v) - return the path between vertex u and vertex v in a depth-first search.
+#     bfs_path(u, v) - return the path between vertex u and vertex v in a breadth-first search.
+#     topological_sort() - return a list of vertexes that can be reached from the source vertex in a depth-first manner.
+#     dfs_recursive(u) - perform a depth-first search recursively from vertex u to all other vertexes.
+#     dfs_iterative(u) - perform a depth-first search iteratively from vertex u to all other vertexes.
+#     bfs(u) - perform a breadth-first search from vertex u to all other vertexes.
+#     bfs_distance(u, d) - return the distance between vertex u and vertex d in a breadth-first search.
+#     shortest_path(u, d) - return the shortest path between vertex u and vertex d in a breadth-first search.
+#     dfs_path(u, v) - return the path between vertex u and vertex v in a depth-first search.
+Synthesizing 10/10 solutions
+
+=======
+
+# class DAG:
+#     def __init__(self, vertices):
+#         self.V = vertices
+#         self.graph = [None] * self.V
+#         for i in range(self.V):
+#             self.graph[i] = []
+# 
+#     def add_edge(self, u, v):
+#         self.graph[u].append(v)
+# 
+#     def is_connected(self, u, v):
+#         return True if v in self.graph[u] else False
+# 
+#     def print_graph(self):
+#         for i in range(self.V):
+#             print(i, ""-->"", self.graph[i])
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex.
+#     # ! faulty code
+#     def dfs(self, s):
+#         visited = [False] * self.V
+#         self.dfs_util(s, visited)
+# 
+#     def dfs_util(self, s, visited):
+#         visited[s] = True
+#         print(s, end="" "")
+#         for i in self.graph[s]:
+#             if visited[i] == False:
+#                 self.dfs_util(i, visited)
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex in a depth-first manner.
+#     # ! faulty code
+#     def dfs_distance(self, s, d):
+#         visited = [False] * self.V
+#         distance = [0] * self.V
+#         self.dfs_util_distance(s, d, visited, distance)
+# 
+#     def dfs_util_distance(self, s, d, visited, distance):
+#         visited[s] = True
+#         for i in self.graph[s]:
+#             if visited[i] == False:
+#                 distance[i] = distance[s] + 1
+#                 if i == d:
+#                     return distance[
+
+=======
+
+# class DAG:
+#     def __init__(self, vertices):
+#         self.V = vertices
+#         self.graph = [None] * self.V
+#         for i in range(self.V):
+#             self.graph[i] = []
+# 
+#     def add_edge(self, u, v):
+#         self.graph[u].append(v)
+# 
+#     def is_connected(self, u, v):
+#         return True if v in self.graph[u] else False
+# 
+#     def print_graph(self):
+#         for i in range(self.V):
+#             print(i, ""-->"", self.graph[i])
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex.
+#     # ! faulty code
+#     def dfs(self, s):
+#         visited = [False] * self.V
+#         self.dfs_util(s, visited)
+# 
+#     def dfs_util(self, s, visited):
+#         visited[s] = True
+#         print(s, end="" "")
+#         for i in self.graph[s]:
+#             if visited[i] == False:
+#                 self.dfs_util(i, visited)
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex.
+#     # ! faulty code
+#     def bfs(self, s):
+#         visited = [False] * self.V
+#         queue = []
+#         queue.append(s)
+#         visited[s] = True
+#         while queue:
+#             s = queue.pop(0)
+#             print(s, end="" "")
+#             for i in self.graph[s]:
+#                 if (
+#                     visited[i] == False
+#                 ):  # ! if ""i"" is not a number, this will cause an error.
+#                     queue.append(i)
+#                     visited[i] = True
+# 
+#     # given
+
+=======
+
+# class DAG:
+#     def __init__(self, vertices):
+#         self.V = vertices
+#         self.graph = [None] * self.V
+#         for i in range(self.V):
+#             self.graph[i] = []
+# 
+#     def add_edge(self, u, v):
+#         self.graph[u].append(v)
+# 
+#     def is_connected(self, u, v):
+#         return True if v in self.graph[u] else False
+# 
+#     def print_graph(self):
+#         for i in range(self.V):
+#             print(i, ""-->"", self.graph[i])
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex.
+#     # ! faulty code
+#     def dfs(self, s):
+#         visited = [False] * self.V
+#         self.dfs_util(s, visited)
+# 
+#     def dfs_util(self, s, visited):
+#         visited[s] = True
+#         print(s, end="" "")
+#         for i in self.graph[s]:
+#             if visited[i] == False:
+#                 self.dfs_util(i, visited)
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex in a depth-first manner.
+#     # ! faulty code
+#     def dfs_distance(self, s, d):
+#         visited = [False] * self.V
+#         distance = [0] * self.V
+#         self.dfs_util_distance(s, visited, distance)
+# 
+#     def dfs_util_distance(self, s, visited, distance):
+#         visited[s] = True
+#         distance[s] = 0
+#         for i in self.graph[s]:
+#             if visited[i] == False:
+#                 self.dfs_util_distance(i, visited, distance)
+# 
+#
+
+=======
+
+class DAG:
+    def __init__(self, vertices):
+        self.V = vertices
+        self.graph = [None] * self.V
+        for i in range(self.V):
+            self.graph[i] = []
+        self.time = 0
+        self.visited = [False] * self.V
+
+    def add_edge(self, u, v):
+        self.graph[u].append(v)
+
+    def is_connected(self, u, v):
+        return True if v in self.graph[u] else False
+
+    def print_graph(self):
+        for i in range(self.V):
+            print(i, ""-->"", self.graph[i])
+
+    def dfs(self, s):
+        self.visited[s] = True
+        print(s, end="" "")
+        for i in self.graph[s]:
+            if self.visited[i] == False:
+                self.dfs(i)
+
+    def dfs_util(self, s):
+        self.visited[s] = True
+        print(s, end="" "")
+        for i in self.graph[s]:
+            if self.visited[i] == False:
+                self.dfs_util(i)
+
+    def dfs_topological_sort(self):
+        self.visited = [False] * self.V
+        for i in range(self.V):
+            if self.visited[i] == False:
+                self.dfs_util(i)
+
+    def dfs_cycle(self, s):
+        self.visited[s] = True
+        for i in self.graph[s]:
+            if self.visited[i] == False:
+                if self.dfs_cycle(i) == True:
+                    return True
+            elif self.visited[i] == True:
+                return True
+        return False
+
+    def dfs_topological_sort_util(self, s):
+        self.visited[s] = True
+        for i in self.graph[s]:
+            if self.visited[i] ==
+
+=======
+
+class DAG:
+    def __init__(self, vertices):
+        self.V = vertices
+        self.graph = [None] * self.V
+        for i in range(self.V):
+            self.graph[i] = []
+
+    def add_edge(self, u, v):
+        self.graph[u].append(v)
+
+    def is_connected(self, u, v):
+        return True if v in self.graph[u] else False
+
+    def print_graph(self):
+        for i in range(self.V):
+            print(i, ""-->"", self.graph[i])
+
+    # given a source vertex, return the list of all vertexes that can be reached from the source vertex.
+    # ! faulty code
+    def dfs(self, s):
+        visited = [False] * self.V
+        self.dfs_util(s, visited)
+
+    def dfs_util(self, s, visited):
+        visited[s] = True
+        print(s, end="" "")
+        for i in self.graph[s]:
+            if visited[i] == False:
+                self.dfs_util(i, visited)
+
+    # the distnce between two vertxes is the smallest number of edges that need to be traversed to get from one vertex to reach the other.
+    # create a fucntion that computes the distance between two vertxes and returns it.  if the vertxes are not reachable from each other, it should return 'not connected'.
+    # ! faulty code
+    def dfs_distance(self, s, d):
+        visited = [False] * self.V
+        distance = [0] * self.V
+        distance[s] = 0
+        self.dfs_util_distance(s, visited, distance)
+        if distance[d] == 0:
+            return ""not connected""
+        return distance[d]
+
+    def dfs_util_distance(self, s, visited, distance):
+        visited[s] = True
+        for i in self.graph[s]:
+            if visited[i] == False:
+                distance[i] = distance[s]
+
+=======
+
+# ! faulty code
+# class DAG:
+#     def __init__(self, vertices):
+#         self.V = vertices
+#         self.graph = [None] * self.V
+#         for i in range(self.V):
+#             self.graph[i] = []
+# 
+#     def add_edge(self, u, v):
+#         self.graph[u].append(v)
+# 
+#     def is_connected(self, u, v):
+#         return True if v in self.graph[u] else False
+# 
+#     def print_graph(self):
+#         for i in range(self.V):
+#             print(i, ""-->"", self.graph[i])
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex.
+#     # ! faulty code
+#     def dfs(self, s):
+#         visited = [False] * self.V
+#         self.dfs_util(s, visited)
+# 
+#     def dfs_util(self, s, visited):
+#         visited[s] = True
+#         print(s, end="" "")
+#         for i in self.graph[s]:
+#             if visited[i] == False:
+#                 self.dfs_util(i, visited)
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex in a depth-first manner.
+#     # ! faulty code
+#     def dfs_distance(self, s, d):
+#         visited = [False] * self.V
+#         distance = [0] * self.V
+#         self.dfs_distance_util(s, d, visited, distance)
+# 
+#     def dfs_distance_util(self, s, d, visited, distance):
+#         visited[s] = True
+#         distance[s] = 0
+#         for i in self.graph[s]:
+#             if visited[i] == False:
+#                 self.dfs_distance_util(i,
+
+=======
+
+# Compare this snippet from algorithm_design/elementry graph algorithms/dag.py:
+# # implement a graph structure.
+# class Graph:
+#     def __init__(self, vertices):
+#         self.V = vertices
+#         self.graph = [None] * self.V
+#         for i in range(self.V):
+#             self.graph[i] = []
+# 
+#     def add_edge(self, u, v):
+#         self.graph[u].append(v)
+# 
+#     def is_connected(self, u, v):
+#         return True if v in self.graph[u] else False
+# 
+#     def print_graph(self):
+#         for i in range(self.V):
+#             print(i, ""-->"", self.graph[i])
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex.
+#     # ! faulty code
+#     def dfs(self, s):
+#         visited = [False] * self.V
+#         self.dfs_util(s, visited)
+# 
+#     def dfs_util(self, s, visited):
+#         visited[s] = True
+#         print(s, end="" "")
+#         for i in self.graph[s]:
+#             if visited[i] == False:
+#                 self.dfs_util(i, visited)
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex in a depth-first manner.
+#     # ! faulty code
+#     def dfs_path(self, s, d):
+#         visited = [False] * self.V
+#         stack = []
+#         stack.append(s)
+#         visited[s] = True
+#         path = []
+#         while stack:
+#             s = stack.pop()
+#             path.append(s)
+#             if s == d:
+#                 return path
+#             for i in self.graph[s]:
+#                 if visited[i] == False
+
+=======
+
+# Compare this snippet from algorithm_design/elementry graph algorithms/dag.py:
+# # implement a graph structure.
+# class Graph:
+#     def __init__(self, vertices):
+#         self.V = vertices
+#         self.graph = [None] * self.V
+#         for i in range(self.V):
+#             self.graph[i] = []
+# 
+#     def add_edge(self, u, v):
+#         self.graph[u].append(v)
+# 
+#     def is_connected(self, u, v):
+#         return True if v in self.graph[u] else False
+# 
+#     def print_graph(self):
+#         for i in range(self.V):
+#             print(i, ""-->"", self.graph[i])
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex.
+#     # ! faulty code
+#     def dfs(self, s):
+#         visited = [False] * self.V
+#         self.dfs_util(s, visited)
+# 
+#     def dfs_util(self, s, visited):
+#         visited[s] = True
+#         print(s, end="" "")
+#         for i in self.graph[s]:
+#             if visited[i] == False:
+#                 self.dfs_util(i, visited)
+# 
+#     # the distnce between two vertxes is the smallest number of edges that need to be traversed to get from one vertex to reach the other.
+#     # create a fucntion that computes the distance between two vertxes and returns it.  if the vertxes are not reachable from each other, it should return 'not connected'.
+#     # ! faulty code
+#     def bfs_distance(self, s, d):
+#         visited = [False] * self.V
+#         queue = []
+#         queue.append(s)
+#         visited[s] = True
+#         distance = [0] * self.V
+#         distance[s] =
+
+=======
+
+# Compare this snippet from algorithm_design/elementry graph algorithms/dag.py:
+# # create a class that implements a directed acyclic graph data structure.
+# class DAG:
+#     def __init__(self, vertices):
+#         self.V = vertices
+#         self.graph = [None] * self.V
+#         for i in range(self.V):
+#             self.graph[i] = []
+# 
+#     def add_edge(self, u, v):
+#         self.graph[u].append(v)
+# 
+#     def is_connected(self, u, v):
+#         return True if v in self.graph[u] else False
+# 
+#     def print_graph(self):
+#         for i in range(self.V):
+#             print(i, ""-->"", self.graph[i])
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex.
+#     # ! faulty code
+#     def bfs(self, s):
+#         visited = [False] * self.V
+#         queue = []
+#         queue.append(s)
+#         visited[s] = True
+#         while queue:
+#             s = queue.pop(0)
+#             print(s, end="" "")
+#             for i in self.graph[s]:  # ! if ""i"" is not a number, this will cause an error.
+#                 if visited[i] == False:
+#                     queue.append(i)
+#                     visited[i] = True
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex in a depth-first manner.
+# Compare this snippet from algorithm_design/elementry graph algorithms/graph.py:
+# # create a class that implements a graph data structure.
+# class Graph:
+#     def __init__(self, vertices):
+#         self.V = vertices
+#         self.graph = [None] * self.V
+#         for i in range(self.V):
+#             self.
+
+=======
+
+# ! the class should contain the following methods:
+#     add_edge(u, v) - add an edge from vertex u to vertex v
+#     is_connected(u, v) - return True if vertex u is connected to vertex v, False otherwise
+#     print_graph() - print the graph
+#     topological_sort() - return a list of vertexes that can be reached from the source vertex in a depth-first manner.
+#     dfs_recursive(u) - perform a depth-first search recursively from vertex u to all other vertexes.
+#     dfs_iterative(u) - perform a depth-first search iteratively from vertex u to all other vertexes.
+#     bfs(u) - perform a breadth-first search from vertex u to all other vertexes.
+#     bfs_distance(u, d) - return the distance between vertex u and vertex d in a breadth-first search.
+#     shortest_path(u, d) - return the shortest path between vertex u and vertex d in a breadth-first search.
+#     dfs_path(u, v) - return the path between vertex u and vertex v in a depth-first search.
+#     bfs_path(u, v) - return the path between vertex u and vertex v in a breadth-first search.
+#     topological_sort() - return a list of vertexes that can be reached from the source vertex in a depth-first manner.
+#     dfs_recursive(u) - perform a depth-first search recursively from vertex u to all other vertexes.
+#     dfs_iterative(u) - perform a depth-first search iteratively from vertex u to all other vertexes.
+#     bfs(u) - perform a breadth-first search from vertex u to all other vertexes.
+#     bfs_distance(u, d) - return the distance between vertex u and vertex d in a breadth-first search.
+#     shortest_path(u, d) - return the shortest path between vertex u and vertex d in a breadth-first search.
+#     dfs_path(u, v) - return the path between vertex u and vertex v in a depth-first search.
+Synthesizing 10/10 solutions
+
+=======
+
+# class DAG:
+#     def __init__(self, vertices):
+#         self.V = vertices
+#         self.graph = [None] * self.V
+#         for i in range(self.V):
+#             self.graph[i] = []
+# 
+#     def add_edge(self, u, v):
+#         self.graph[u].append(v)
+# 
+#     def is_connected(self, u, v):
+#         return True if v in self.graph[u] else False
+# 
+#     def print_graph(self):
+#         for i in range(self.V):
+#             print(i, ""-->"", self.graph[i])
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex.
+#     # ! faulty code
+#     def dfs(self, s):
+#         visited = [False] * self.V
+#         self.dfs_util(s, visited)
+# 
+#     def dfs_util(self, s, visited):
+#         visited[s] = True
+#         print(s, end="" "")
+#         for i in self.graph[s]:
+#             if visited[i] == False:
+#                 self.dfs_util(i, visited)
+# 
+#     # given a source vertex, return the list of all vertexes that can be reached from the source vertex in a depth-first manner.
+#     # ! faulty code
+#     def dfs_distance(self, s, d):
+#         visited = [False] * self.V
+#         distance = [0] * self.V
+#         self.dfs_util_distance(s, d, visited, distance)
+# 
+#     def dfs_util_distance(self, s, d, visited, "

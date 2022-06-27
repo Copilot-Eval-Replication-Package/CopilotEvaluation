@@ -1,0 +1,185 @@
+"Synthesizing 10/10 solutions (Duplicates hidden)
+
+=======
+
+def print_graph(self):
+        for i in range(self.V):
+            print(i, ""-->"", self.graph[i])
+            
+    # given a source vertex, return the list of all vertexes that can be reached from the source vertex.
+    def bfs(self, s):
+        visited = [False] * self.V
+        queue = []
+        queue.append(s)
+        visited[s] = True
+        while queue:
+            s = queue.pop(0)
+            print(s, end="" "")
+            for i in self.graph[s]:
+                if visited[i] == False:
+                    queue.append(i)
+                    visited[i] = True
+
+=======
+
+def print_graph(self):
+        for i in range(self.V):
+            print(i, ""-->"", self.graph[i])
+            
+    # given a source vertex, return the list of all vertexes that can be reached from the source vertex.
+    def bfs(self, s):
+        visited = [False] * self.V
+        queue = []
+        visited[s] = True
+        queue.append(s)
+        while queue:
+            s = queue.pop(0)
+            print(s, end="" "")
+            for i in self.graph[s]:
+                if visited[i] == False:
+                    queue.append(i)
+                    visited[i] = True
+        return visited
+
+=======
+
+def print_graph(self):
+        for i in range(self.V):
+            print(i, ""-->"", self.graph[i])
+            
+    # given a source vertex, return the list of all vertexes that can be reached from the source vertex.
+    def bfs(self, s):
+        visited = [False] * self.V
+        queue = []
+
+        visited[s] = True
+        queue.append(s)
+
+        while queue:
+            s = queue.pop(0)
+            print(s, end="" "")
+
+            for i in self.graph[s]:
+                if visited[i] == False:
+                    visited[i] = True
+                    queue.append(i)
+
+=======
+
+def print_graph(self):
+        for i in range(self.V):
+            print(i, ""-->"", self.graph[i])
+            
+    # given a source vertex, return the list of all vertexes that can be reached from the source vertex.
+    def bfs(self, s):
+        # create a queue and enqueue the source vertex.
+        queue = []
+        queue.append(s)
+        # mark the source vertex as visited.
+        visited = [False] * self.V
+        visited[s] = True
+        # loop until the queue is empty.
+        while queue:
+            # dequeue a vertex from the queue.
+            s = queue.pop(0)
+            # print the vertex.
+            print(s, end = "" "")
+            # loop through the adjacency list of the dequeued vertex.
+            for i in self.graph[s]:
+                # if the adjacent vertex is not visited, enqueue it and mark it as visited.
+                if visited[i] == False:
+                    queue.append(i)
+                    visited[i] = True
+
+=======
+
+def print_graph(self):
+        for i in range(self.V):
+            print(i, ""-->"", self.graph[i])
+            
+    # given a source vertex, return the list of all vertexes that can be reached from the source vertex.
+    def bfs(self, s):
+        # create an empty queue.
+        queue = []
+        # create a visited list.
+        visited = [False] * self.V
+        # mark the source vertex as visited.
+        visited[s] = True
+        # enqueue the source vertex.
+        queue.append(s)
+        # while the queue is not empty.
+        while queue:
+            # dequeue a vertex.
+            s = queue.pop(0)
+            # print the vertex.
+            print(s, end="" "")
+            # get the adjacent vertexes.
+            for i in self.graph[s]:
+                # if the adjacent vertex is not visited.
+                if visited[i] == False:
+                    # mark it as visited.
+                    visited[i] = True
+                    # enqueue the adjacent vertex.
+                    queue.append(i)
+
+=======
+
+def print_graph(self):
+        for i in range(self.V):
+            print(i, ""-->"", self.graph[i])
+            
+    # given a source vertex, return the list of all vertexes that can be reached from the source vertex.
+    def bfs(self, s):
+        # initialize the queue
+        queue = []
+        # mark all vertexes as unvisited
+        visited = [False] * self.V
+        # mark the source vertex as visited and enqueue it
+        visited[s] = True
+        queue.append(s)
+        # while the queue is not empty
+        while queue:
+            # dequeue a vertex from the queue
+            s = queue.pop(0)
+            # print the dequeued vertex
+            print(s, end="" "")
+            # get the adjacent vertexes
+            for i in self.graph[s]:
+                if not visited[i]:
+                    visited[i] = True
+                    queue.append(i)
+
+=======
+
+class Graph:
+    def __init__(self, vertices):
+        self.V = vertices
+        self.graph = [None] * self.V
+        for i in range(self.V):
+            self.graph[i] = []
+
+    def add_edge(self, u, v):
+        self.graph[u].append(v)
+        self.graph[v].append(u)
+
+    def is_connected(self, u, v):
+        return True if v in self.graph[u] else False
+
+    def print_graph(self):
+        for i in range(self.V):
+            print(i, ""-->"", self.graph[i])
+            
+    # given a source vertex, return the list of all vertexes that can be reached from the source vertex.
+    # use BFS to solve this problem.
+    def BFS(self, s):
+        queue = []
+        visited = [False] * self.V
+        queue.append(s)
+        visited[s] = True
+        while queue:
+            s = queue.pop(0)
+            print(s, end="" "")
+            for i in self.graph[s]:
+                if visited[i] == False:
+                    queue.append(i)
+                    visited[i] = True"
