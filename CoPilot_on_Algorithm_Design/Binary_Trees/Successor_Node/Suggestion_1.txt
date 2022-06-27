@@ -1,0 +1,569 @@
+"Synthesizing 10/10 solutions
+
+=======
+
+def size(self):
+        if self.left is None and self.right is None:
+            pass
+    
+# implement a function for finding the successor of a node in a tree. the function recieves the value of a node as input. the successor of a node is the node that is the smallest value in the tree that is greater than the value of the node.
+   def successor(self):
+        if self.right is not None:
+            return self.right.find_min()
+        else:
+            current = self
+            while current.parent is not None and current.parent.right is current:
+                current = current.parent
+            return current.parent
+
+    # implement a function for finding the predecessor of a node in a tree. the predecessor of a node is the node that is the largest value in the tree that is less than the value of the node
+    def predecessor(self):
+        if self.left is not None:
+            return self.left.find_max()
+        else:
+            current = self
+            while current.parent is not None and current.parent.left is current:
+                current = current.parent
+            return current.parent
+
+    # implement a function for finding the height of a tree. the height of a tree is the number of nodes along the longest path from the root node down to the farthest leaf node
+    def is_balanced(self):
+        if self.left is None and self.right is None:
+            return True
+        elif self.left is None:
+            return self.right.height() <= 1
+        elif self.right is None:
+            return self.left.height() <= 1
+        else:
+            return abs(self.left.height() - self.right.height()) <= 1
+
+    # implement a function for finding the height of a tree. the height of a tree is the number of nodes along the longest path from the root node down to the farthest leaf node
+    def is_balanced_recursive(self):
+        if self.left is None and self.right is None:
+            return True
+        elif self.left is None:
+            return self.right.height() <= 1
+        elif self.right is None:
+            return self.left.height() <= 1
+        else:
+            return abs(self.left.height() - self.right.height()) <= 1
+
+    # implement a function for finding the height of a tree. the height of a tree is the number of nodes along the longest path from the root node down to the farthest leaf node
+    def is_balanced_iterative(self):
+
+=======
+
+def size(self):
+        if self.left is None and self.right is None:
+            pass
+    
+    # implement a function for finding the successor of a node in a tree. the successor of a node is the node that is the smallest value in the tree that is greater than the value of the node
+    def successor(self):
+        if self.right is not None:
+            return self.right.find_min()
+        else:
+            current = self
+            while current.parent is not None and current.parent.right is current:
+                current = current.parent
+            return current.parent
+
+    # implement a function for finding the predecessor of a node in a tree. the predecessor of a node is the node that is the largest value in the tree that is less than the value of the node
+    def predecessor(self):
+        if self.left is not None:
+            return self.left.find_max()
+        else:
+            current = self
+            while current.parent is not None and current.parent.left is current:
+                current = current.parent
+            return current.parent
+
+    # implement a function for finding the number of leaves in a tree
+    def num_leaves(self):
+        if self.left is None and self.right is None:
+            return 1
+        elif self.left is None:
+            return self.right.num_leaves()
+        elif self.right is None:
+            return self.left.num_leaves()
+        else:
+            return self.left.num_leaves() + self.right.num_leaves()
+
+    # implement a function for finding the number of nodes in a tree
+    def num_nodes(self):
+        if self.left is None and self.right is None:
+            return 1
+        elif self.left is None:
+            return 1 + self.right.num_nodes()
+        elif self.right is None:
+            return 1 + self.left.num_nodes()
+        else:
+            return 1 + self.left.num_nodes() + self.right.num_nodes()
+
+    # implement a function for finding the number of internal nodes in a tree
+    def num_internal_nodes(self):
+        if self.left is None and self.right is None:
+            return 0
+        elif self.left is None:
+            return 1 + self.right.num_internal_nodes()
+        elif self.right is None:
+            return 1 +
+
+=======
+
+def size(self):
+        if self.left is None and self.right is None:
+            pass
+    
+    # implement a function for finding the successor of a node in a tree. the successor of a node is the node that is the smallest value in the tree that is greater than the value of the node
+    def successor(self):
+        if self.right is not None:
+            return self.right.find_min()
+        else:
+            current = self
+            while current.parent is not None and current.parent.right is current:
+                current = current.parent
+            return current.parent
+
+    # implement a function for finding the predecessor of a node in a tree. the predecessor of a node is the node that is the largest value in the tree that is less than the value of the node
+    def predecessor(self):
+        if self.left is not None:
+            return self.left.find_max()
+        else:
+            current = self
+            while current.parent is not None and current.parent.left is current:
+                current = current.parent
+            return current.parent
+
+    # implement a function for finding the inorder successor of a node in a tree. the inorder successor of a node is the node that is the smallest value in the tree that is greater than the value of the node
+    def in_order_successor(self):
+        if self.right is not None:
+            return self.right.find_min()
+        else:
+            current = self
+            while current.parent is not None and current.parent.right is current:
+                current = current.parent
+            return current.parent
+
+    # implement a function for finding the inorder predecessor of a node in a tree. the inorder predecessor of a node is the node that is the largest value in the tree that is less than the value of the node
+    def in_order_predecessor(self):
+        if self.left is not None:
+            return self.left.find_max()
+        else:
+            current = self
+            while current.parent is not None and current.parent.left is current:
+                current = current.parent
+            return current.parent
+
+=======
+
+def size(self):
+        if self.left is None and self.right is None:
+            pass
+    
+    # implement a function for finding the successor of a node in a tree. the successor of a node is the node that is the smallest value in the tree that is greater than the value of the node
+    def successor(self):
+        if self.right is not None:
+            return self.right.find_min()
+        else:
+            current = self
+            while current.parent is not None and current.parent.right is current:
+                current = current.parent
+            return current.parent
+
+    # implement a function for finding the predecessor of a node in a tree. the predecessor of a node is the node that is the largest value in the tree that is less than the value of the node
+    def predecessor(self):
+        if self.left is not None:
+            return self.left.find_max()
+        else:
+            current = self
+            while current.parent is not None and current.parent.left is current:
+                current = current.parent
+            return current.parent
+
+    # implement a function for finding the predecessor of a node in a tree. the predecessor of a node is the node that is the largest value in the tree that is less than the value of the node
+    def predecessor_recursive(self):
+        if self.left is not None:
+            return self.left.find_max()
+        else:
+            return self.parent
+
+    # implement a function for finding the predecessor of a node in a tree. the predecessor of a node is the node that is the largest value in the tree that is less than the value of the node
+    def successor_recursive(self):
+        if self.right is not None:
+            return self.right.find_min()
+        else:
+            return self.parent
+
+    # implement a function for finding the predecessor of a node in a tree. the predecessor of a node is the node that is the largest value in the tree that is less than the value of the node
+    def predecessor_iterative(self):
+        current = self
+        while current.parent is not None and current.parent.left is current:
+            current = current.parent
+        return current.parent
+
+    # implement a function for finding the predecessor of a node in a tree. the predecessor of a node is the node that is the largest value in the tree that is less than the value of the node
+    def successor_iterative(self):
+        current = self
+        while current.parent is not None and current
+
+=======
+
+def size(self):
+        if self.left is None and self.right is None:
+            pass
+    
+    # implement a function for finding the successor of a node in a tree. the successor of a node is the node that is the smallest value in the tree that is greater than the value of the node
+    def successor(self):
+        if self.right is not None:
+            return self.right.find_min()
+        else:
+            current = self
+            while current.parent is not None and current.parent.right is current:
+                current = current.parent
+            return current.parent
+
+    def successor_iterative(self):
+        if self.right is not None:
+            return self.right.find_min()
+        else:
+            current = self
+            while current.parent is not None and current.parent.right is current:
+                current = current.parent
+            return current.parent
+
+    # implement a function for finding the predecessor of a node in a tree. the predecessor of a node is the node that is the greatest value in the tree that is less than the value of the node
+    def predecessor(self):
+        if self.left is not None:
+            return self.left.find_max()
+        else:
+            current = self
+            while current.parent is not None and current.parent.left is current:
+                current = current.parent
+            return current.parent
+
+    def predecessor_iterative(self):
+        if self.left is not None:
+            return self.left.find_max()
+        else:
+            current = self
+            while current.parent is not None and current.parent.left is current:
+                current = current.parent
+            return current.parent
+
+    # implement a function for finding the number of leaves in a tree
+    def leaves(self):
+        if self.left is None and self.right is None:
+            return 1
+        else:
+            return self.left.leaves() + self.right.leaves()
+
+    def leaves_iterative(self):
+        current = self
+        leaves = 0
+        while current is not None:
+            if current.left is None and current.right is None:
+                leaves += 1
+            current = current.left if current.left is not None else current.right
+        return leaves
+
+    # implement a function for finding the number of internal nodes in a tree
+    def internal_nodes(self):
+        if self.left is None and self.right is None:
+            return 0
+
+=======
+
+def size(self):
+        if self.left is None and self.right is None:
+            pass
+    
+    # implement a function for finding the successor of a node in a tree. the successor of a node is the node that is the smallest value in the tree that is greater than the value of the node
+    def successor(self):
+        if self.right is not None:
+            return self.right.find_min_recursive()
+        else:
+            current = self
+            while current.parent is not None and current is current.parent.right:
+                current = current.parent
+            return current.parent
+
+    # implement a function for finding the predecessor of a node in a tree. the predecessor of a node is the node that is the largest value in the tree that is smaller than the value of the node
+    def predecessor(self):
+        if self.left is not None:
+            return self.left.find_max_recursive()
+        else:
+            current = self
+            while current.parent is not None and current is current.parent.left:
+                current = current.parent
+            return current.parent
+
+    # implement a function for finding the number of leaves in a tree
+    def leaves(self):
+        if self.left is None and self.right is None:
+            return 1
+        else:
+            if self.left is None:
+                return self.right.leaves()
+            elif self.right is None:
+                return self.left.leaves()
+            else:
+                return self.left.leaves() + self.right.leaves()
+
+    # implement a function for finding the number of nodes in a tree
+    def nodes(self):
+        if self.left is None and self.right is None:
+            return 1
+        else:
+            if self.left is None:
+                return self.right.nodes()
+            elif self.right is None:
+                return self.left.nodes()
+            else:
+                return self.left.nodes() + self.right.nodes()
+
+    # implement a function for finding the number of internal nodes in a tree
+    def internal_nodes(self):
+        if self.left is None and self.right is None:
+            return 0
+        else:
+            if self.left is None:
+                return self.right.internal_nodes()
+            elif self.right is None:
+                return self.left.internal_nodes()
+            else:
+                return self.left.internal
+
+=======
+
+def size(self):
+        if self.left is None and self.right is None:
+            pass
+    
+    # implement a function for finding the successor of a node in a tree. the successor of a node is the node that is the smallest value in the tree that is greater than the value of the node
+    def successor(self):
+        if self.right is not None:
+            return self.right.find_min_recursive()
+        else:
+            current = self
+            while current.parent is not None and current.parent.right is current:
+                current = current.parent
+            return current.parent
+
+    def successor_iterative(self):
+        current = self
+        while current.right is not None:
+            current = current.right
+        return current
+
+    # implement a function for finding the predecessor of a node in a tree. the predecessor of a node is the node that is the largest value in the tree that is less than the value of the node
+    def predecessor(self):
+        if self.left is not None:
+            return self.left.find_max_recursive()
+        else:
+            current = self
+            while current.parent is not None and current.parent.left is current:
+                current = current.parent
+            return current.parent
+
+    def predecessor_iterative(self):
+        current = self
+        while current.left is not None:
+            current = current.left
+        return current
+
+    # implement a function for finding the sum of all the values in a tree
+    def sum(self):
+        if self.left is None and self.right is None:
+            return self.value
+        elif self.left is None:
+            return self.value + self.right.sum()
+        elif self.right is None:
+            return self.value + self.left.sum()
+        else:
+            return self.value + self.left.sum() + self.right.sum()
+
+    # implement a function for finding the sum of all the values in a tree
+    def sum_iterative(self):
+        current = self
+        sum = 0
+        while current is not None:
+            sum += current.value
+            current = current.left if current.left is not None else current.right
+        return sum
+
+    # implement a function for finding the sum of all the values in a tree
+    def sum_recursive(self):
+        if self.left is None and self.right is None:
+            return self.value
+        elif self.left
+
+=======
+
+def size(self):
+        if self.left is None and self.right is None:
+            pass
+    
+    # implement a function for finding the successor of a node in a tree. the successor of a node is the node that is the smallest value in the tree that is greater than the value of the node
+    def successor(self):
+        if self.right is not None:
+            return self.right.find_min()
+        else:
+            current = self
+            while current.parent is not None:
+                if current.parent.left is current:
+                    return current.parent
+                current = current.parent
+        return None
+
+    # implement a function for finding the predecessor of a node in a tree. the predecessor of a node is the node that is the largest value in the tree that is less than the value of the node
+    def predecessor(self):
+        if self.left is not None:
+            return self.left.find_max()
+        else:
+            current = self
+            while current.parent is not None:
+                if current.parent.right is current:
+                    return current.parent
+                current = current.parent
+        return None
+
+    # implement a function for finding the number of leaves in a BST
+    def number_of_leaves(self):
+        if self.left is None and self.right is None:
+            return 1
+        elif self.left is None:
+            return self.right.number_of_leaves()
+        elif self.right is None:
+            return self.left.number_of_leaves()
+        else:
+            return self.left.number_of_leaves() + self.right.number_of_leaves()
+
+    def number_of_leaves_iterative(self):
+        current = self
+        leaves = 0
+        while current is not None:
+            if current.left is None and current.right is None:
+                leaves += 1
+            current = current.left if current.left is not None else current.right
+        return leaves
+
+    # implement a function for finding the number of internal nodes in a BST
+    def number_of_internals(self):
+        if self.left is None and self.right is None:
+            return 0
+        elif self.left is None:
+            return 1 + self.right.number_of_internals()
+        elif self.right is None:
+            return 1 + self.left.number_of_internals()
+        else:
+            return 1 + self
+
+=======
+
+def size(self):
+        if self.left is None and self.right is None:
+            pass
+    
+    # implement a function for finding the successor of a node in a tree. the successor of a node is the node that is the smallest value in the tree that is greater than the value of the node
+    def successor(self):
+        if self.right is not None:
+            return self.right.find_min_recursive()
+        else:
+            current = self
+            while current.parent is not None and current is current.parent.right:
+                current = current.parent
+            return current.parent
+
+    # implement a function for finding the predecessor of a node in a tree. the predecessor of a node is the node that is the largest value in the tree that is less than the value of the node
+    def predecessor(self):
+        if self.left is not None:
+            return self.left.find_max_recursive()
+        else:
+            current = self
+            while current.parent is not None and current is current.parent.left:
+                current = current.parent
+            return current.parent
+
+    # implement a function for finding the path from the root to a node in a tree. the path should be returned as a list of nodes from the root node down to the node
+    def path_to(self, value):
+        path = []
+        current = self
+        while current is not None:
+            path.append(current)
+            if current.value == value:
+                break
+            elif value < current.value:
+                current = current.left
+            else:
+                current = current.right
+        return path
+
+    # implement a function for finding the lowest common ancestor of two nodes in a tree. the lowest common ancestor is the node that is an ancestor of both nodes and is the farthest from the two nodes
+    def lca(self, node1, node2):
+        if node1.value == node2.value:
+            return node1
+        elif node1.value < node2.value:
+            return self.lca(node1.right, node2)
+        else:
+            return self.lca(node1.left, node2)
+
+    # implement a function for finding the lowest common ancestor of two nodes in a tree. the lowest common ancestor is the node that is an ancestor of both nodes and is the farthest from the two nodes
+    def lca_recursive(self, node1, node2):
+        if node1.value == node2.value:
+
+=======
+
+def size(self):
+        if self.left is None and self.right is None:
+            pass
+    
+    # implement a function for finding the successor of a node in a tree. the successor of a node is the node that is the smallest value in the tree that is greater than the value of the node
+    def successor(self):
+        if self.right is not None:
+            return self.right.find_min()
+        else:
+            parent = self.parent
+            while parent is not None and parent.right is self:
+                self = parent
+                parent = self.parent
+            return parent
+
+    # implement a function for finding the predecessor of a node in a tree. the predecessor of a node is the node that is the largest value in the tree that is less than the value of the node
+    def predecessor(self):
+        if self.left is not None:
+            return self.left.find_max()
+        else:
+            parent = self.parent
+            while parent is not None and parent.left is self:
+                self = parent
+                parent = self.parent
+            return parent
+
+    # implement a function for finding the number of leaves in a tree
+    def number_of_leaves(self):
+        if self.left is None and self.right is None:
+            return 1
+        elif self.left is None:
+            return self.right.number_of_leaves()
+        elif self.right is None:
+            return self.left.number_of_leaves()
+        else:
+            return self.left.number_of_leaves() + self.right.number_of_leaves()
+
+    # implement a function for finding the number of nodes in a tree
+    def number_of_nodes(self):
+        if self.left is None and self.right is None:
+            return 1
+        elif self.left is None:
+            return 1 + self.right.number_of_nodes()
+        elif self.right is None:
+            return 1 + self.left.number_of_nodes()
+        else:
+            return 1 + self.left.number_of_nodes() + self.right.number_of_nodes()
+
+    # implement a function for finding the number of internal nodes in a tree
+    def number_of_internal_nodes(self):
+        if self.left is None and self.right is None:
+            return 0
+        elif self.left is None:
+            return 1 + self."
