@@ -1,0 +1,390 @@
+"Synthesizing 10/10 solutions
+
+=======
+
+class Graph:
+    def __init__(self, vertices):
+        self.V = vertices
+        self.graph = [[0 for column in range(vertices)]
+                      for row in range(vertices)]
+
+    def printSolution(self, dist):
+        print(""Vertex tDistance from Source"")
+        for node in range(self.V):
+            print(node, ""t"", dist[node])
+
+    # A utility function to find the vertex with
+    # minimum distance value, from the set of vertices
+    # not yet included in shortest path tree
+    def minDistance(self, dist, sptSet):
+
+        # Initilaize minimum distance for next node
+        min = sys.maxsize
+
+        # Search not nearest vertex not in the
+        # shortest path tree
+        for v in range(self.V):
+            if dist[v] < min and sptSet[v] == False:
+                min = dist[v]
+                min_index = v
+
+        return min_index
+
+    # Funtion that implements Dijkstra's single source
+    # shortest path algorithm for a graph represented
+    # using adjacency matrix representation
+    def dijkstra(self, src):
+
+        dist = [sys.maxsize] * self.V
+        dist[src] = 0
+        sptSet = [False] * self.V
+
+        for cout in range(self.V):
+
+            # Pick the minimum distance vertex from
+            # the set of vertices not yet processed.
+            # u is always equal to src in first iteration
+            u = self.minDistance(dist, sptSet)
+
+            # Put the minimum distance vertex in the
+            # shotest path tree
+            sptSet[u] = True
+
+            # Update dist value of the adjacent vertices
+            # of the picked vertex only if the current
+            # distance is greater than new distance and
+            # the vertex in not in the shotest path tree
+            for v in range(self.V):
+                if self.graph[u][v] > 0 and sptSet[v] == False and dist[v] > dist[u] + self.graph[u][v]:
+                    dist[v] = dist[u] +
+
+=======
+
+class Graph:
+    def __init__(self, vertices):
+        self.vertices = vertices
+        self.graph = [[0 for column in range(vertices)]
+                      for row in range(vertices)]
+
+    def add_edge(self, src, dest):
+        self.graph[src][dest] = 1
+        self.graph[dest][src] = 1
+
+    def print_graph(self):
+        for i in range(self.vertices):
+            print(self.graph[i])
+
+=======
+
+class Graph:
+    def __init__(self, vertices):
+        self.vertices = vertices
+        self.graph = [[0 for column in range(vertices)]
+                      for row in range(vertices)]
+
+    def print(self):
+        for i in range(self.vertices):
+            print(self.graph[i])
+
+    def addEdge(self, u, v):
+        self.graph[u][v] = 1
+        self.graph[v][u] = 1
+
+=======
+
+class Graph:
+    def __init__(self):
+        self.graph = {}
+
+    def add_vertex(self, vertex):
+        if vertex not in self.graph:
+            self.graph[vertex] = []
+
+    def add_edge(self, vertex1, vertex2):
+        self.graph[vertex1].append(vertex2)
+        self.graph[vertex2].append(vertex1)
+
+    def print_graph(self):
+        for key in self.graph:
+            print(key, ""->"", self.graph[key])
+
+=======
+
+class Graph:
+    def __init__(self):
+        self.graph = {}
+
+    def add_vertex(self, vertex):
+        if vertex not in self.graph:
+            self.graph[vertex] = []
+
+    def add_edge(self, from_vertex, to_vertex):
+        if from_vertex in self.graph:
+            self.graph[from_vertex].append(to_vertex)
+        else:
+            self.graph[from_vertex] = [to_vertex]
+
+    def show_graph(self):
+        for key in self.graph:
+            print(key, self.graph[key])
+
+    def bfs(self, start_vertex):
+        visited = []
+        queue = []
+        queue.append(start_vertex)
+        while queue:
+            vertex = queue.pop(0)
+            if vertex not in visited:
+                visited.append(vertex)
+                print(vertex, end=' ')
+                for neighbor in self.graph[vertex]:
+                    queue.append(neighbor)
+
+=======
+
+class Graph:
+    def __init__(self, vertices):
+        self.vertices = vertices
+        self.graph = [[0 for column in range(vertices)]
+                      for row in range(vertices)]
+    def print_graph(self):
+        for i in range(self.vertices):
+            for j in range(self.vertices):
+                print(self.graph[i][j], end="" "")
+            print()
+    def add_edge(self, u, v):
+        self.graph[u][v] = 1
+        self.graph[v][u] = 1
+    def remove_edge(self, u, v):
+        self.graph[u][v] = 0
+        self.graph[v][u] = 0
+    def is_connected(self, u, v):
+        return self.graph[u][v] == 1
+    def is_connected_bfs(self, u, v):
+        queue = [u]
+        visited = [False] * self.vertices
+        visited[u] = True
+        while queue:
+            s = queue.pop(0)
+            for i in range(self.vertices):
+                if self.graph[s][i] == 1 and visited[i] == False:
+                    queue.append(i)
+                    visited[i] = True
+        return visited[v]
+
+=======
+
+class Graph:
+    def __init__(self):
+        self.graph = {}
+
+    def add_vertex(self, vertex):
+        self.graph[vertex] = []
+
+    def add_edge(self, vertex1, vertex2):
+        self.graph[vertex1].append(vertex2)
+        self.graph[vertex2].append(vertex1)
+
+    def show(self):
+        print(self.graph)
+
+    def show_edges(self):
+        for key in self.graph.keys():
+            print(key, end=' -> ')
+            for value in self.graph[key]:
+                print(value, end=' ')
+            print()
+
+    def show_vertices(self):
+        print(self.graph.keys())
+
+    def has_vertex(self, vertex):
+        if vertex in self.graph.keys():
+            return True
+        else:
+            return False
+
+    def has_edge(self, vertex1, vertex2):
+        if vertex1 in self.graph.keys() and vertex2 in self.graph.keys():
+            if vertex2 in self.graph[vertex1]:
+                return True
+            else:
+                return False
+        else:
+            return False
+
+    def remove_edge(self, vertex1, vertex2):
+        if vertex1 in self.graph.keys() and vertex2 in self.graph.keys():
+            if vertex2 in self.graph[vertex1]:
+                self.graph[vertex1].remove(vertex2)
+            if vertex1 in self.graph[vertex2]:
+                self.graph[vertex2].remove(vertex1)
+        else:
+            return False
+
+    def remove_vertex(self, vertex):
+        if vertex in self.graph.keys():
+            for value in self.graph[vertex]:
+                self.graph[value].remove(vertex)
+            self.graph.pop(vertex)
+        else:
+            return False
+
+    def dfs(self, start, end):
+        visited = []
+        stack = [start]
+        while stack:
+            vertex = stack.pop()
+            if vertex not in visited
+
+=======
+
+class Graph:
+    def __init__(self, vertices):
+        self.vertices = vertices
+        self.graph = [[0 for col in range(vertices)] for row in range(vertices)]
+
+    def add_edge(self, v, w):
+        self.graph[v][w] = 1
+        self.graph[w][v] = 1
+
+    def print_graph(self):
+        for i in range(self.vertices):
+            for j in range(self.vertices):
+                print(self.graph[i][j], end=' ')
+            print()
+
+    def bfs(self, s):
+        visited = [False] * self.vertices
+        queue = []
+        queue.append(s)
+        visited[s] = True
+        while queue:
+            s = queue.pop(0)
+            print(s, end=' ')
+            for j in range(self.vertices):
+                if self.graph[s][j] == 1 and visited[j] == False:
+                    queue.append(j)
+                    visited[j] = True
+
+=======
+
+class Graph:
+    def __init__(self):
+        self.vertex_list = []
+        self.adj_list = {}
+        self.num_vertices = 0
+        self.num_edges = 0
+
+    def add_vertex(self, vertex):
+        if vertex not in self.vertex_list:
+            self.vertex_list.append(vertex)
+            self.adj_list[vertex] = []
+            self.num_vertices += 1
+
+    def add_edge(self, vertex1, vertex2):
+        if vertex1 in self.adj_list:
+            self.adj_list[vertex1].append(vertex2)
+            self.num_edges += 1
+
+    def show(self):
+        for key in self.adj_list:
+            print(key, '->', self.adj_list[key])
+
+    def depth_first_search(self, start):
+        visited = []
+        for vertex in self.adj_list:
+            visited.append(False)
+        self.depth_first_search_helper(start, visited)
+
+    def depth_first_search_helper(self, start, visited):
+        visited[start] = True
+        print(start)
+        for vertex in self.adj_list[start]:
+            if visited[vertex] is False:
+                self.depth_first_search_helper(vertex, visited)
+
+    def breadth_first_search(self, start):
+        visited = []
+        for vertex in self.adj_list:
+            visited.append(False)
+        queue = []
+        queue.append(start)
+        visited[start] = True
+        while len(queue) > 0:
+            start = queue.pop(0)
+            print(start)
+            for vertex in self.adj_list[start]:
+                if visited[vertex] is False:
+                    queue.append(vertex)
+                    visited[vertex] = True
+
+    def topological_sort(self):
+        visited = []
+        for vertex in self.adj_list:
+            visited.append(False)
+        self.topological_sort_helper(
+
+=======
+
+class Graph:
+
+    def __init__(self, graph):
+        self.graph = graph
+
+    def __len__(self):
+        return len(self.graph)
+
+    def __iter__(self):
+        return iter(self.graph)
+
+    def __getitem__(self, key):
+        return self.graph[key]
+
+    def __setitem__(self, key, value):
+        self.graph[key] = value
+
+    def __contains__(self, key):
+        return key in self.graph
+
+    def __str__(self):
+        return str(self.graph)
+
+    def __repr__(self):
+        return repr(self.graph)
+
+    def add_vertex(self, vertex):
+        self.graph[vertex] = []
+
+    def add_edge(self, vertex1, vertex2):
+        self.graph[vertex1].append(vertex2)
+        self.graph[vertex2].append(vertex1)
+
+    def remove_edge(self, vertex1, vertex2):
+        self.graph[vertex1].remove(vertex2)
+        self.graph[vertex2].remove(vertex1)
+
+    def remove_vertex(self, vertex):
+        for i in self.graph[vertex]:
+            self.graph[i].remove(vertex)
+        del self.graph[vertex]
+
+    def depth_first_search(self, start_vertex):
+        visited = []
+        stack = [start_vertex]
+        while stack:
+            vertex = stack.pop()
+            if vertex not in visited:
+                visited.append(vertex)
+                stack.extend(self.graph[vertex])
+        return visited
+
+    def breadth_first_search(self, start_vertex):
+        visited = []
+        queue = [start_vertex]
+        while queue:
+            vertex = queue.pop(0)
+            if vertex not in visited:
+                visited.append(vertex)
+                queue.extend(self.graph[vertex])
+        return visited"
