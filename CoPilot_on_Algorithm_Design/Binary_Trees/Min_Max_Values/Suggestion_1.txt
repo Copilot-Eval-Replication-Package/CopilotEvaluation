@@ -1,0 +1,875 @@
+"Synthesizing 10/10 solutions
+
+=======
+
+def delete(self, value):
+        if value < self.value:
+            if self.left is None:
+                return False
+            else:
+                self.left.delete(value)
+        elif value > self.value:
+            if self.right is None:
+                return False
+            else:
+                self.right.delete(value)
+        else:
+            if self.left is None and self.right is None:
+                if self.parent.left is self:
+                    self.parent.left = None
+                else:
+                    self.parent.right = None
+            elif self.left is None:
+                if self.parent.left is self:
+                    self.parent.left = self.right
+                    self.right.parent = self.parent
+                else:
+                    self.parent.right = self.right
+                    self.right.parent = self.parent
+            elif self.right is None:
+                if self.parent.left is self:
+                    self.parent.left = self.left
+                    self.left.parent = self.parent
+                else:
+                    self.parent.right = self.left
+
+    # implement a function for finding the minimum value in a BST
+    def find_min(self):
+        if self.left is None:
+            return self.value
+        else:
+            return self.left.find_min()
+
+    # implement a function for finding the maximum value in a BST
+    def find_max(self):
+        if self.right is None:
+            return self.value
+        else:
+            return self.right.find_max()
+
+    # implement a function for finding the maximum value in a BST
+    def find_successor(self, value):
+        if value < self.value:
+            if self.left is None:
+                return False
+            else:
+                return self.left.find_successor(value)
+        elif value > self.value:
+            if self.right is None:
+                return False
+            else:
+                return self.right.find_successor(value)
+        else:
+            if self.right is None:
+                return False
+            else:
+                return self.right.find_min()
+
+    # implement a function for finding the maximum value in a BST
+    def find_predecessor(self, value):
+        if value < self.value:
+            if self.left is None:
+                return False
+            else:
+                return self.left.find_predecessor(value)
+        elif value > self.value:
+            if self.right is None:
+                return False
+            else:
+                return self.right.find_predecessor(value)
+        else:
+            if self.left is None:
+                return False
+            else:
+                return self.left.find_max()
+
+    # implement a function for finding the depth of a BST
+    def depth(self):
+        if self.left is None and self.right is None:
+            return 1
+        elif self.left is None:
+            return self.right.depth() + 1
+        elif self.right is None:
+            return self.left.depth() + 1
+        else:
+            return max(self.left.depth(), self.right.depth()) + 1
+
+    # implement a function for finding the height of a BST
+    def height(self):
+        if
+
+=======
+
+def delete(self, value):
+        if value < self.value:
+            if self.left is None:
+                return False
+            else:
+                self.left.delete(value)
+        elif value > self.value:
+            if self.right is None:
+                return False
+            else:
+                self.right.delete(value)
+        else:
+            if self.left is None and self.right is None:
+                if self.parent.left is self:
+                    self.parent.left = None
+                else:
+                    self.parent.right = None
+            elif self.left is None:
+                if self.parent.left is self:
+                    self.parent.left = self.right
+                    self.right.parent = self.parent
+                else:
+                    self.parent.right = self.right
+                    self.right.parent = self.parent
+            elif self.right is None:
+                if self.parent.left is self:
+                    self.parent.left = self.left
+                    self.left.parent = self.parent
+                else:
+                    self.parent.right = self.left
+
+    # implement a function for finding the minimum value in a BST
+    def find_min(self):
+        if self.left is None:
+            return self.value
+        else:
+            return self.left.find_min()
+
+    # implement a function for finding the maximum value in a BST
+    def find_max(self):
+        if self.right is None:
+            return self.value
+        else:
+            return self.right.find_max()
+
+    # implement a function for finding the maximum value in a BST
+    def find_max_recursive(self):
+        if self.right is None:
+            return self.value
+        else:
+            return self.right.find_max_recursive()
+
+    # implement a function for finding the minimum value in a BST
+    def find_min_recursive(self):
+        if self.left is None:
+            return self.value
+        else:
+            return self.left.find_min_recursive()
+
+    # implement a function for finding the minimum value in a BST
+    def find_min_iterative(self):
+        current = self
+        while current.left is not None:
+            current = current.left
+        return current.value
+
+    # implement a function for finding the minimum value in a BST
+    def find_max_iterative(self):
+        current = self
+        while current.right is not None:
+            current = current.right
+        return current.value
+
+    def in_order_traversal(self):
+        if self.left is not None:
+            self.left.in_order_traversal()
+        print(self.value)
+        if self.right is not None:
+            self.right.in_order_traversal()
+
+    def pre_order_traversal(self):
+        print(self.value)
+        if self.left is not None:
+            self.left.pre_order_traversal()
+        if self.right is not None:
+            self.right.pre_order_traversal()
+
+    def post_order_traversal(self):
+        if self.left is not None:
+            self.left.post_order_traversal()
+        if self.right is
+
+=======
+
+def delete(self, value):
+        if value < self.value:
+            if self.left is None:
+                return False
+            else:
+                self.left.delete(value)
+        elif value > self.value:
+            if self.right is None:
+                return False
+            else:
+                self.right.delete(value)
+        else:
+            if self.left is None and self.right is None:
+                if self.parent.left is self:
+                    self.parent.left = None
+                else:
+                    self.parent.right = None
+            elif self.left is None:
+                if self.parent.left is self:
+                    self.parent.left = self.right
+                    self.right.parent = self.parent
+                else:
+                    self.parent.right = self.right
+                    self.right.parent = self.parent
+            elif self.right is None:
+                if self.parent.left is self:
+                    self.parent.left = self.left
+                    self.left.parent = self.parent
+                else:
+                    self.parent.right = self.left
+
+    # implement a function for finding the minimum value in a BST
+    def find_min(self):
+        if self.left is None:
+            return self.value
+        else:
+            return self.left.find_min()
+
+    # implement a function for finding the maximum value in a BST
+    def find_max(self):
+        if self.right is None:
+            return self.value
+        else:
+            return self.right.find_max()
+
+    # implement a function for finding the maximum value in a BST
+    def find_successor(self):
+        if self.right is not None:
+            return self.right.find_min()
+        else:
+            current = self
+            while current.parent is not None and current.parent.right is current:
+                current = current.parent
+            return current.parent.value
+
+    # implement a function for finding the maximum value in a BST
+    def find_predecessor(self):
+        if self.left is not None:
+            return self.left.find_max()
+        else:
+            current = self
+            while current.parent is not None and current.parent.left is current:
+                current = current.parent
+            return current.parent.value
+
+=======
+
+def delete(self, value):
+        if value < self.value:
+            if self.left is None:
+                return False
+            else:
+                self.left.delete(value)
+        elif value > self.value:
+            if self.right is None:
+                return False
+            else:
+                self.right.delete(value)
+        else:
+            if self.left is None and self.right is None:
+                if self.parent.left is self:
+                    self.parent.left = None
+                else:
+                    self.parent.right = None
+            elif self.left is None:
+                if self.parent.left is self:
+                    self.parent.left = self.right
+                    self.right.parent = self.parent
+                else:
+                    self.parent.right = self.right
+                    self.right.parent = self.parent
+            elif self.right is None:
+                if self.parent.left is self:
+                    self.parent.left = self.left
+                    self.left.parent = self.parent
+                else:
+                    self.parent.right = self.left
+
+    # implement a function for finding the minimum value in a BST
+    def find_min(self):
+        if self.left is None:
+            return self.value
+        else:
+            return self.left.find_min()
+
+    # implement a function for finding the maximum value in a BST
+    def find_max(self):
+        if self.right is None:
+            return self.value
+        else:
+            return self.right.find_max()
+
+    # implement a function for finding the maximum value in a BST
+    def find_successor(self):
+        if self.right is None:
+            if self.parent.left is self:
+                self.parent.left = None
+            else:
+                self.parent.right = None
+            return self.value
+        else:
+            return self.right.find_min()
+
+    def find_predecessor(self):
+        if self.left is None:
+            if self.parent.left is self:
+                self.parent.left = None
+            else:
+                self.parent.right = None
+            return self.value
+        else:
+            return self.left.find_max()
+
+    def print_tree(self):
+        if self.left is not None:
+            self.left.print_tree()
+        print(self.value)
+        if self.right is not None:
+            self.right.print_tree()
+
+    def print_tree_reverse(self):
+        if self.right is not None:
+            self.right.print_tree_reverse()
+        print(self.value)
+        if self.left is not None:
+            self.left.print_tree_reverse()
+
+    def __repr__(self):
+        return str(self.value)
+
+=======
+
+def delete(self, value):
+        if value < self.value:
+            if self.left is None:
+                return False
+            else:
+                self.left.delete(value)
+        elif value > self.value:
+            if self.right is None:
+                return False
+            else:
+                self.right.delete(value)
+        else:
+            if self.left is None and self.right is None:
+                if self.parent.left is self:
+                    self.parent.left = None
+                else:
+                    self.parent.right = None
+            elif self.left is None:
+                if self.parent.left is self:
+                    self.parent.left = self.right
+                    self.right.parent = self.parent
+                else:
+                    self.parent.right = self.right
+                    self.right.parent = self.parent
+            elif self.right is None:
+                if self.parent.left is self:
+                    self.parent.left = self.left
+                    self.left.parent = self.parent
+                else:
+                    self.parent.right = self.left
+
+    # implement a function for finding the minimum value in a BST
+    def find_min(self):
+        if self.left is None:
+            return self.value
+        else:
+            return self.left.find_min()
+
+    # implement a function for finding the maximum value in a BST
+    def find_max(self):
+        if self.right is None:
+            return self.value
+        else:
+            return self.right.find_max()
+
+    # implement a function for finding the successor of a BST
+    def find_successor(self):
+        if self.right is not None:
+            return self.right.find_min()
+        else:
+            successor = self.parent
+            while successor.right is self:
+                self = successor
+                successor = successor.parent
+            return successor.value
+
+    # implement a function for finding the predecessor of a BST
+    def find_predecessor(self):
+        if self.left is not None:
+            return self.left.find_max()
+        else:
+            predecessor = self.parent
+            while predecessor.left is self:
+                self = predecessor
+                predecessor = predecessor.parent
+            return predecessor.value
+
+    # implement a function for finding the height of a BST
+    def height(self):
+        if self.left is None and self.right is None:
+            return 0
+        elif self.left is None:
+            return self.right.height() + 1
+        elif self.right is None:
+            return self.left.height() + 1
+        else:
+            return max(self.left.height(), self.right.height()) + 1
+
+    # implement a function for finding the depth of a BST
+    def depth(self):
+        if self.parent is None:
+            return 0
+        else:
+            return 1 + self.parent.depth()
+
+    # implement a function for finding the number of nodes in a BST
+    def num_nodes(self):
+        if self.left is None and self.right is None:
+            return 1
+        elif self.left is None:
+            return 1 + self.right.num_nodes()
+        elif self.right is None:
+            return 1 + self.left.num_nodes
+
+=======
+
+def delete(self, value):
+        if value < self.value:
+            if self.left is None:
+                return False
+            else:
+                self.left.delete(value)
+        elif value > self.value:
+            if self.right is None:
+                return False
+            else:
+                self.right.delete(value)
+        else:
+            if self.left is None and self.right is None:
+                if self.parent.left is self:
+                    self.parent.left = None
+                else:
+                    self.parent.right = None
+            elif self.left is None:
+                if self.parent.left is self:
+                    self.parent.left = self.right
+                    self.right.parent = self.parent
+                else:
+                    self.parent.right = self.right
+                    self.right.parent = self.parent
+            elif self.right is None:
+                if self.parent.left is self:
+                    self.parent.left = self.left
+                    self.left.parent = self.parent
+                else:
+                    self.parent.right = self.left
+
+    # implement a function for finding the minimum value in a BST
+    def find_min(self):
+        if self.left is None:
+            return self.value
+        else:
+            return self.left.find_min()
+
+    # implement a function for finding the maximum value in a BST
+    def find_max(self):
+        if self.right is None:
+            return self.value
+        else:
+            return self.right.find_max()
+
+    # implement a function for finding the maximum value in a BST
+    def find_next(self, value):
+        if value < self.value:
+            if self.right is None:
+                return None
+            else:
+                return self.right.find_min()
+        else:
+            if self.right is None:
+                return self.parent.find_next(value)
+            else:
+                return self.right.find_min()
+
+    def find_prev(self, value):
+        if value > self.value:
+            if self.left is None:
+                return None
+            else:
+                return self.left.find_max()
+        else:
+            if self.left is None:
+                return self.parent.find_prev(value)
+            else:
+                return self.left.find_max()
+
+    def print_tree(self):
+        if self.left is not None:
+            self.left.print_tree()
+        print(self.value)
+        if self.right is not None:
+            self.right.print_tree()
+
+=======
+
+def delete(self, value):
+        if value < self.value:
+            if self.left is None:
+                return False
+            else:
+                self.left.delete(value)
+        elif value > self.value:
+            if self.right is None:
+                return False
+            else:
+                self.right.delete(value)
+        else:
+            if self.left is None and self.right is None:
+                if self.parent.left is self:
+                    self.parent.left = None
+                else:
+                    self.parent.right = None
+            elif self.left is None:
+                if self.parent.left is self:
+                    self.parent.left = self.right
+                    self.right.parent = self.parent
+                else:
+                    self.parent.right = self.right
+                    self.right.parent = self.parent
+            elif self.right is None:
+                if self.parent.left is self:
+                    self.parent.left = self.left
+                    self.left.parent = self.parent
+                else:
+                    self.parent.right = self.left
+
+    # implement a function for finding the minimum value in a BST
+    def find_min(self):
+        if self.left is None:
+            return self.value
+        else:
+            return self.left.find_min()
+
+    # implement a function for finding the maximum value in a BST
+    def find_max(self):
+        if self.right is None:
+            return self.value
+        else:
+            return self.right.find_max()
+
+    # implement a function for finding the maximum value in a BST
+    def find_max(self):
+        if self.right is None:
+            return self.value
+        else:
+            return self.right.find_max()
+
+    # implement a function for finding the maximum value in a BST
+    def find_max(self):
+        if self.right is None:
+            return self.value
+        else:
+            return self.right.find_max()
+
+    # implement a function for finding the maximum value in a BST
+    def find_max(self):
+        if self.right is None:
+            return self.value
+        else:
+            return self.right.find_max()
+
+    def inorder_print(self):
+        if self.left is not None:
+            self.left.inorder_print()
+        print(self.value)
+        if self.right is not None:
+            self.right.inorder_print()
+
+    def preorder_print(self):
+        print(self.value)
+        if self.left is not None:
+            self.left.preorder_print()
+        if self.right is not None:
+            self.right.preorder_print()
+
+    def postorder_print(self):
+        if self.left is not None:
+            self.left.postorder_print()
+        if self.right is not None:
+            self.right.postorder_print()
+        print(self.value)
+
+    def breadth_first_search(self):
+        queue = [self]
+        while queue:
+            current_node = queue.pop(0)
+            print(current_node.value)
+            if current_node.left is not None:
+                queue.append(current_node.left)
+
+=======
+
+def delete(self, value):
+        if value < self.value:
+            if self.left is None:
+                return False
+            else:
+                self.left.delete(value)
+        elif value > self.value:
+            if self.right is None:
+                return False
+            else:
+                self.right.delete(value)
+        else:
+            if self.left is None and self.right is None:
+                if self.parent.left is self:
+                    self.parent.left = None
+                else:
+                    self.parent.right = None
+            elif self.left is None:
+                if self.parent.left is self:
+                    self.parent.left = self.right
+                    self.right.parent = self.parent
+                else:
+                    self.parent.right = self.right
+                    self.right.parent = self.parent
+            elif self.right is None:
+                if self.parent.left is self:
+                    self.parent.left = self.left
+                    self.left.parent = self.parent
+                else:
+                    self.parent.right = self.left
+
+    # implement a function for finding the minimum value in a BST
+    def find_min(self):
+        if self.left is None:
+            return self.value
+        else:
+            return self.left.find_min()
+
+    # implement a function for finding the maximum value in a BST
+    def find_max(self):
+        if self.right is None:
+            return self.value
+        else:
+            return self.right.find_max()
+
+    # implement a function for finding the maximum value in a BST
+    def find_max_recursive(self):
+        if self.right is None:
+            return self.value
+        else:
+            return self.right.find_max_recursive()
+
+    # implement a function for finding the minimum value in a BST
+    def find_min_recursive(self):
+        if self.left is None:
+            return self.value
+        else:
+            return self.left.find_min_recursive()
+
+    def __str__(self):
+        return str(self.value)
+
+=======
+
+def delete(self, value):
+        if value < self.value:
+            if self.left is None:
+                return False
+            else:
+                self.left.delete(value)
+        elif value > self.value:
+            if self.right is None:
+                return False
+            else:
+                self.right.delete(value)
+        else:
+            if self.left is None and self.right is None:
+                if self.parent.left is self:
+                    self.parent.left = None
+                else:
+                    self.parent.right = None
+            elif self.left is None:
+                if self.parent.left is self:
+                    self.parent.left = self.right
+                    self.right.parent = self.parent
+                else:
+                    self.parent.right = self.right
+                    self.right.parent = self.parent
+            elif self.right is None:
+                if self.parent.left is self:
+                    self.parent.left = self.left
+                    self.left.parent = self.parent
+                else:
+                    self.parent.right = self.left
+
+    # implement a function for finding the minimum value in a BST
+    def min(self):
+        if self.left is None:
+            return self.value
+        else:
+            return self.left.min()
+
+    # implement a function for finding the maximum value in a BST
+    def max(self):
+        if self.right is None:
+            return self.value
+        else:
+            return self.right.max()
+
+    # implement a function for finding the successor of a BST node
+    def successor(self):
+        if self.right is not None:
+            return self.right.min()
+        else:
+            p = self.parent
+            while p is not None and p.right is self:
+                self = p
+                p = self.parent
+            return p
+
+    # implement a function for finding the predecessor of a BST node
+    def predecessor(self):
+        if self.left is not None:
+            return self.left.max()
+        else:
+            p = self.parent
+            while p is not None and p.left is self:
+                self = p
+                p = self.parent
+            return p
+
+    # implement a function for finding the size of a BST
+    def size(self):
+        if self.left is None and self.right is None:
+            return 1
+        elif self.left is None:
+            return 1 + self.right.size()
+        elif self.right is None:
+            return 1 + self.left.size()
+        else:
+            return 1 + self.left.size() + self.right.size()
+
+    # implement a function for finding the height of a BST
+    def height(self):
+        if self.left is None and self.right is None:
+            return 0
+        elif self.left is None:
+            return 1 + self.right.height()
+        elif self.right is None:
+            return 1 + self.left.height()
+        else:
+            return 1 + max(self.left.height(), self.right.height())
+
+    # implement a function for finding the depth of a BST node
+    def depth(self):
+        if self.parent is None:
+            return 0
+        else:
+            return 1 + self.parent.
+
+=======
+
+def delete(self, value):
+        if value < self.value:
+            if self.left is None:
+                return False
+            else:
+                self.left.delete(value)
+        elif value > self.value:
+            if self.right is None:
+                return False
+            else:
+                self.right.delete(value)
+        else:
+            if self.left is None and self.right is None:
+                if self.parent.left is self:
+                    self.parent.left = None
+                else:
+                    self.parent.right = None
+            elif self.left is None:
+                if self.parent.left is self:
+                    self.parent.left = self.right
+                    self.right.parent = self.parent
+                else:
+                    self.parent.right = self.right
+                    self.right.parent = self.parent
+            elif self.right is None:
+                if self.parent.left is self:
+                    self.parent.left = self.left
+                    self.left.parent = self.parent
+                else:
+                    self.parent.right = self.left
+
+    # implement a function for finding the minimum value in a BST
+    def minValue(self):
+        if self.left is None:
+            return self.value
+        else:
+            return self.left.minValue()
+
+    # implement a function for finding the maximum value in a BST
+    def maxValue(self):
+        if self.right is None:
+            return self.value
+        else:
+            return self.right.maxValue()
+
+    # implement a function for finding the maximum value in a BST
+    def get_successor(self):
+        if self.right is not None:
+            return self.right.minValue()
+        else:
+            return self.parent.get_successor()
+
+    def get_predecessor(self):
+        if self.left is not None:
+            return self.left.maxValue()
+        else:
+            return self.parent.get_predecessor()
+
+    def get_parent(self):
+        if self.parent is None:
+            return None
+        else:
+            return self.parent.value
+
+    def get_left(self):
+        if self.left is None:
+            return None
+        else:
+            return self.left.value
+
+    def get_right(self):
+        if self.right is None:
+            return None
+        else:
+            return self.right.value
+
+    def get_value(self):
+        return self.value
+
+    def set_value(self, value):
+        self.value = value
+
+    def set_left(self, left):
+        self.left = left
+
+    def set_right(self, right):
+        self.right = right
+
+    def set_parent(self, parent):
+        self.parent = parent
+
+    def __str__(self):
+        return '{}'.format(self.value)"

@@ -1,0 +1,17 @@
+"Synthesizing 10/10 solutions (Duplicates hidden)
+
+=======
+
+def find_min(self):
+        current = self
+        while current.left is not None:
+            current = current.left
+        return current
+
+=======
+
+def find_min(self):
+        if self.left is None:
+            return self
+        else:
+            return self.left.find_min()"
