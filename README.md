@@ -1,5 +1,5 @@
-# Can developers trust it? An Empirical Evaluation of Copilot as a AI-based Code Generation Tool
-This repository contains the replication package for TOSEM paper titled: __Can developers trust it? An Empirical Evaluation of Copilot as a AI-based Code Generation Tool__. This repository contains our detailed results and the python scripts which were used for generating them.
+# GitHub Copilot AI pair programmer: Asset or Liability?
+This repository contains the replication package for JSS paper titled: __GitHub Copilot AI pair programmer: Asset or Liability?__. This repository contains our detailed results and the python scripts which were used for generating them.
 
 This repository is broken into two directories:
  - Copilot_on_Algorithm_Design: contains the python scripts and the results which were used to answer RQ1 of our paper: ___Can Copilot suggest correct and efficient solutions for some basic algorithmic problems?___
