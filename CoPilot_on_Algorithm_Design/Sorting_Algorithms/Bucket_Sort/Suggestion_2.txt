@@ -1,0 +1,31 @@
+"Synthesizing 10/10 solutions (Duplicates hidden)
+
+=======
+
+def bucket_sort(arr):
+    buckets = [[] for _ in range(len(arr))]
+    for i in range(len(arr)):
+        buckets[int(len(arr) * arr[i])].append(arr[i])
+    return [x for bucket in buckets for x in bucket]
+
+=======
+
+def bucket_sort(arr):
+    buckets = [[] for _ in range(len(arr))]
+    for i in range(len(arr)):
+        buckets[int(arr[i]*len(arr))].append(arr[i])
+    for i in range(len(buckets)):
+        buckets[i] = sorted(buckets[i])
+    return [x for bucket in buckets for x in bucket]
+
+=======
+
+def bucket_sort(arr):
+    buckets = [[] for _ in range(len(arr))]
+    for i in range(len(arr)):
+        buckets[int(arr[i]*len(arr))].append(arr[i])
+    for i in range(len(buckets)):
+        buckets[i] = sorted(buckets[i])
+    return [item for sublist in buckets for item in sublist]
+
+print(bucket_sort([0.897, 0.565, 0.656, 0.1234, 0.665, 0.3434]))"
