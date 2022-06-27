@@ -1,0 +1,122 @@
+Synthesizing 6/10 solutions (Duplicates hidden)
+
+=======
+
+# 
+# 
+# # implement a class called activity. each instance of this class has two attributes: start_time and end_time. both should be int numbers between 0 and 24.
+# class Activity:
+#     def __init__(self, start_time, end_time):
+#         self.start_time = start_time
+#         self.end_time = end_time
+# 
+# 
+# # implement a function for comparing two activities. the function should return True if the first activity ends before the second activity starts.
+# # the fuction should also check that the activities are not overlapping.
+# def check_overlap(activity1, activity2):
+#     if activity1.end_time < activity2.start_time:
+#         return True
+#     elif activity1.start_time > activity2.end_time:
+#         return True
+#     else:
+#         return False
+# 
+# 
+# # implement a class named set. each instance of this class has a list of activities.
+# # the activities in the list should be sorted by their finish time and an activity can be added to the list if it starts after the first activity finshes
+# # and finishes before the last activity starts. an activity can only be added if it does not overlap with any other activity in the list.
+# # before adding an activiy, the list should be sorted by finish time.
+# class Set:
+#     def __init__(self):
+#         self.activities = []
+# 
+#     def add_activity(self, activity):
+#         if self.activities == []:
+#             self.activities.append(activity)
+#         elif activity.start_time >= self.activities[-1].end_time:
+#             self.activities.append(activity)
+#         elif activity.end_time <= self.activities[0].start_time:
+#             self.activities.insert(0, activity)
+#         elif check_overlap(activity, self.activities[0]):
+#             print("Activity not added")
+#         else:
+#             for i in range(len(self.activities)):
+
+=======
+
+# then, implement a function for printing the activities in the set.
+# finally, implement a function for adding an activity to the set.
+# the function should first check if the activity can be added to the set.
+# if the activity can be added, it should be added.
+# if the activity cannot be added, it should not be added.
+# finally, implement a function for printing the activities in the set.
+# the function should print each activity in the set on a separate line.
+# finally, implement a function for adding an activity to the set.
+# the function should first check if the activity can be added to the set.
+# if the activity can be added, it should be added.
+# if the activity cannot be added, it should not be added.
+# finally, implement a function for printing the activities in the set.
+# the function should print each activity in the set on a separate line.
+# finally, implement a function for adding an activity to the set.
+# the function should first check if the activity can be added to the set.
+# if the activity can be added, it should be added.
+# if the activity cannot be added, it should not be added.
+# finally, implement a function for printing the activities in the set.
+# the function should print each activity in the set on a separate line.
+# finally, implement a function for adding an activity to the set.
+# the function should first check if the activity can be added to the set.
+# if the activity can be added, it should be added.
+# if the activity cannot be added, it should not be added.
+# finally, implement a function for printing the activities in the set.
+# the function should print each activity in the set on a separate line.
+# finally, implement a function for adding an activity to the set.
+# the function should first check if the activity can be added to the set.
+# if the activity can be added, it should be added.
+# if the activity cannot be added, it should not be added.
+# finally, implement a function for printing the activities in the set.
+# the function should print each activity in the set on a separate line.
+# finally, implement a function for adding an activity to the set.
+# the function should first check if the activity
+
+=======
+
+# then, implement a function that returns the number of activities in a set.
+# finally, implement a function that returns the total duration of all activities in a set.
+# then, implement a function that returns the number of activities that finish before a certain time.
+# finally, implement a function that returns the total duration of all activities that finish before a certain time.
+# finally, implement a function that returns the number of activities that start before a certain time.
+# finally, implement a function that returns the total duration of all activities that start before a certain time.
+# finally, implement a function that returns the number of activities that start after a certain time.
+# finally, implement a function that returns the total duration of all activities that start after a certain time.
+# finally, implement a function that returns the number of activities that start before and finish after a certain time.
+# finally, implement a function that returns the total duration of all activities that start before and finish after a certain time.
+# finally, implement a function that returns the number of activities that start after and finish before a certain time.
+# finally, implement a function that returns the total duration of all activities that start after and finish before a certain time.
+# finally, implement a function that returns the number of activities that start before, finish after, and finish before a certain time.
+# finally, implement a function that returns the total duration of all activities that start before, finish after, and finish before a certain time.
+# finally, implement a function that returns the number of activities that start after, finish after, and finish before a certain time.
+# finally, implement a function that returns the total duration of all activities that start after, finish after, and finish before a certain time.
+# finally, implement a function that returns the number of activities that start after, finish after, and finish before a certain time.
+# finally, implement a function that returns the total duration of all activities that start after, finish after, and finish before a certain time.
+# finally, implement a function that returns the number of activities that start after, finish after, and finish before a certain time.
+# finally, implement a function that returns the total duration of all activities that start after, finish after, and finish before a certain time.
+# finally, implement a function that returns the number of activities that start after, finish
+
+=======
+
+# then, implement a function called get_activities. this function should take a set object and a list of activities.
+# the function should return a list of activities that are not in the list of activities.
+# finally, implement a function called get_sorted_activities. this function should take a set object and a list of activities.
+# the function should return a list of activities that are not in the list of activities.
+# the list of activities should be sorted by finish time.
+# finally, implement a function called get_activities_with_time_range. this function should take a set object and a start time and an end time.
+# the function should return a list of activities that are not in the list of activities and that start after the start time and finish before the end time.
+# the list of activities should be sorted by finish time.
+# finally, implement a function called get_activities_with_time_range_and_duration. this function should take a set object, a start time, an end time, and a duration.
+# the function should return a list of activities that are not in the list of activities, that start after the start time, finish before the end time, and have a duration less than or equal to the duration.
+# the list of activities should be sorted by finish time.
+# finally, implement a function called get_activities_with_time_range_and_duration_and_type. this function should take a set object, a start time, an end time, a duration, and a type.
+# the function should return a list of activities that are not in the list of activities, that start after the start time, finish before the end time, and have a duration less than or equal to the duration, and have the specified type.
+# the list of activities should be sorted by finish time.
+# finally, implement a function called get_activities_with_time_range_and_duration_and_type_and_location. this function should take a set object, a start time, an end time, a duration, a type, and a location.
+# the function should return a list of activities that are not in the list of activities, that start after the start time, finish before the end time, and have a duration less than or equal to the duration,

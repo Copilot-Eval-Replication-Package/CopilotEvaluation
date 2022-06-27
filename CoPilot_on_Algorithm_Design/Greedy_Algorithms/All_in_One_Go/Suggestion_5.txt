@@ -1,0 +1,196 @@
+Synthesizing 7/10 solutions (Duplicates hidden)
+
+=======
+
+
+# class Activity:
+#     def __init__(self, start_time, end_time):
+#         self.start_time = start_time
+#         self.end_time = end_time
+# 
+# 
+# # implement a function for comparing two activities. the function should return True if the first activity ends before the second activity starts.
+# # the fuction should also check that the activities are not overlapping.
+# def check_overlap(activity1, activity2):
+#     if activity1.end_time < activity2.start_time:
+#         return True
+#     elif activity1.start_time > activity2.end_time:
+#         return True
+#     else:
+#         return False
+# 
+# 
+# # implement a class named set. each instance of this class has a list of activities.
+# # the activities in the list should be sorted by their finish time and an activity can be added to the list if it starts after the first activity finshes
+# # and finishes before the last activity starts. an activity can only be added if it does not overlap with any other activity in the list.
+# # before adding an activiy, the list should be sorted by finish time.
+# class Set:
+#     def __init__(self):
+#         self.activities = []
+# 
+#     def add_activity(self, activity):
+#         if self.activities == []:
+#             self.activities.append(activity)
+#         elif activity.start_time >= self.activities[-1].end_time:
+#             self.activities.append(activity)
+#         elif activity.end_time <= self.activities[0].start_time:
+#             self.activities.insert(0, activity)
+#         elif check_overlap(activity, self.activities[0]):
+#             print("Activity not added")
+#         else:
+#             for i in range(len(self.activities)):
+#                 if check_overlap(activity, self.activities[i]):
+#                     print("Activity not added")
+#                     break
+#                 elif i == len(self
+
+=======
+
+# 
+# 
+# # implement a class called activity. each instance of this class has two attributes: start_time and end_time. both should be int numbers between 0 and 24.
+# class Activity:
+#     def __init__(self, start_time, end_time):
+#         self.start_time = start_time
+#         self.end_time = end_time
+# 
+# 
+# # implement a function for comparing two activities. the function should return True if the first activity ends before the second activity starts.
+# # the fuction should also check that the activities are not overlapping.
+# def check_overlap(activity1, activity2):
+#     if activity1.end_time < activity2.start_time:
+#         return True
+#     elif activity1.start_time > activity2.end_time:
+#         return True
+#     else:
+#         return False
+# 
+# 
+# # implement a class named set. each instance of this class has a list of activities.
+# # the activities in the list should be sorted by their finish time and an activity can be added to the list if it starts after the first activity finshes
+# # and finishes before the last activity starts. an activity can only be added if it does not overlap with any other activity in the list.
+# # before adding an activiy, the list should be sorted by finish time.
+# class Set:
+#     def __init__(self):
+#         self.activities = []
+# 
+#     def add_activity(self, activity):
+#         if self.activities == []:
+#             self.activities.append(activity)
+#         elif activity.start_time >= self.activities[-1].end_time:
+#             self.activities.append(activity)
+#         elif activity.end_time <= self.activities[0].start_time:
+#             self.activities.insert(0, activity)
+#         elif check_overlap(activity, self.activities[0]):
+#             print("Activity not added")
+#         else:
+#             for i in range(len(self.activities)):
+
+=======
+
+
+# implement a class called activity. each instance of this class has two attributes: start_time and end_time. both should be int numbers between 0 and 24.
+
+=======
+
+# 
+# 
+# # implement a class called activity. each instance of this class has two attributes: start_time and end_time. both should be int numbers between 0 and 24.
+# # then, implement a function for comparing two activities. the function should return True if the first activity ends before the second activity starts.
+# # the fuction should also check that the activities are not overlapping.
+# # finally, implement a class named set. each instance of this class has a list of activities.
+# # the activities in the list should be sorted by their finish time and an activity can be added to the list if it starts after the first activity finshes
+# # and finishes before the last activity starts. an activity can only be added if it does not overlap with any other activity in the list.
+# # before adding an activiy, the list should be sorted by finish time.
+# class Activity:
+#     def __init__(self, start_time, end_time):
+#         self.start_time = start_time
+#         self.end_time = end_time
+# 
+# 
+# # implement a function for comparing two activities. the function should return True if the first activity ends before the second activity starts.
+# # the fuction should also check that the activities are not overlapping.
+# def check_overlap(activity1, activity2):
+#     if activity1.end_time < activity2.start_time:
+#         return True
+#     elif activity1.start_time > activity2.end_time:
+#         return True
+#     else:
+#         return False
+# 
+# 
+# # implement a class named set. each instance of this class has a list of activities.
+# # the activities in the list should be sorted by their finish time and an activity can be added to the list if it starts after the first activity finshes
+# # and finishes before the last activity starts. an activity can only be added if it does not overlap with any other activity in the list.
+# # before adding an activiy, the list should be sorted by finish time.
+# class Set:
+#     def __init__(self):
+#         self.activities = []
+# 
+#     def add_activity(self
+
+=======
+
+
+import unittest
+
+=======
+
+# 
+# 
+# # create a new activity and add it to the list
+# activity1 = Activity(12, 14)
+# activity2 = Activity(13, 15)
+# activity3 = Activity(14, 16)
+# activity4 = Activity(15, 17)
+# activity5 = Activity(16, 18)
+# activity6 = Activity(17, 19)
+# activity7 = Activity(18, 20)
+# activity8 = Activity(19, 21)
+# activity9 = Activity(20, 22)
+# activity10 = Activity(21, 23)
+# 
+# set1 = Set()
+# set1.add_activity(activity1)
+# set1.add_activity(activity2)
+# set1.add_activity(activity3)
+# set1.add_activity(activity4)
+# set1.add_activity(activity5)
+# set1.add_activity(activity6)
+# set1.add_activity(activity7)
+# set1.add_activity(activity8)
+# set1.add_activity(activity9)
+# set1.add_activity(activity10)
+# 
+# set1.print_activities()
+# 
+# 
+# # create a new activity and add it to the list
+# activity11 = Activity(22, 24)
+# set1.add_activity(activity11)
+# 
+# set1.print_activities()
+# 
+# 
+# # create a new activity and add it to the list
+# activity12 = Activity(23, 25)
+# set1.add_activity(activity12)
+# 
+# set1.print_activities()
+# 
+# 
+# # create a new activity and add it to the list
+# activity13 = Activity(24, 26)
+# set1.add_activity(activity13)
+# 
+# set1.print_activities()
+# 
+# 
+# # create a new activity and add it to the list
+# activity14 = Activity(25, 27)
+# set1.add_activity(activity14)
+# 
+# set1.print_activities()
+# 
+# 
+#
