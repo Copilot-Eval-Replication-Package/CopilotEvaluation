@@ -38,7 +38,7 @@ def heapify(arr, n, i):
         heapify(arr, n, largest)
 
 
-if __name__ == ""__main__"":
+if __name__ == "__main__":
     test = [random.randint(0, 100) for _ in range(10)]
     print(test)
     print(heap_sort(test))

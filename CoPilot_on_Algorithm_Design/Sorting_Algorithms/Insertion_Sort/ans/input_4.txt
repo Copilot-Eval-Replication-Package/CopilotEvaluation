@@ -1,0 +1,1 @@
+insertion_sort([3, 2, 1]) 

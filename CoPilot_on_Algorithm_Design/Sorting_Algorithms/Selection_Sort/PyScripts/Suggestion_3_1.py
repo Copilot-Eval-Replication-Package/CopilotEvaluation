@@ -12,4 +12,3 @@ def sort_array(arr):
         unsorted_arr.remove(smallest)
     return sorted_arr
 
-print(sort_array([5, 3, 6, 2, 10]))"
