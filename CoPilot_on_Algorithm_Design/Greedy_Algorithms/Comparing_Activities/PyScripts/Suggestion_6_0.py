@@ -1,2 +1,2 @@
-Synthesizing 7/10 solutions (Duplicates hidden)
+#Synthesizing 7/10 solutions (Duplicates hidden)
 

@@ -1,0 +1,5 @@
+file_1,file_2,similarity
+Suggestion_1_1.py,Suggestion_1_1.py,1.0
+Suggestion_1_1.py,Suggestion_4_1.py,0.9913
+Suggestion_4_1.py,Suggestion_1_1.py,0.9913
+Suggestion_4_1.py,Suggestion_4_1.py,1.0
