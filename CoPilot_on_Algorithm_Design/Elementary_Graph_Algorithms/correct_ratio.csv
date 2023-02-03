@@ -1,0 +1,6 @@
+algo,correct_ratio_t1,correct_ratio_t2
+BFS_Search,30.0,13.333333333333334
+DAG,63.33333333333333,0.0
+DFS_Search,30.0,0.0
+Data_Structure,23.333333333333332,0.0
+Strongly_Connected_Vetrices,60.0,60.0

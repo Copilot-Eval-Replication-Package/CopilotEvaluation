@@ -4,7 +4,7 @@ import os
 from python_comparison import get_significant_subtrees, compare_subtrees
 import pandas as pd
 DATASET = "CoPilot_on_Algorithm_Design"
-GP_algo = "Greedy_Algorithms"
+GP_algo = "Sorting_Algorithms"
 cor_ratio_result = pd.DataFrame(columns=['algo','correct_ratio_t1','correct_ratio_t2'])
 output_path = os.path.join(
         os.getcwd(),
@@ -22,8 +22,11 @@ def paths_list(dir_path):
 
 
 #for sorting algorithms
-#algo_name =[ "Bubble_Sort", "Insertion_Sort", "Selection_Sort", "Merge_Sort", "Quick_Sort", "Heap_Sort","Bucket_Sort","Radix_Sort"]
-algo_name=["Activity_Class", "Comparing_Activities","Set_of_activities"]
+algo_name =[ "Bubble_Sort", "Insertion_Sort", "Selection_Sort", "Merge_Sort", "Quick_Sort", "Heap_Sort","Bucket_Sort","Radix_Sort"]
+#For Gready algorithms
+#algo_name=["Activity_Class", "Comparing_Activities","Set_of_activities"]
+#algo_name=["Data_Structure", "Inorder_Walk","Min_Max_Values","Successor_Node"]
+#algo_name=["BFS_Search", "DAG", "DFS_Search", "Data_Structure", "Strongly_Connected_Vetrices"]
 for algo in algo_name:
     CODE_DIR = os.path.join(
         os.getcwd(),
@@ -60,8 +63,11 @@ for algo in algo_name:
             else:
                 num_list_wrong_t2 +=1
 
-    cor_ratio_t1= (num_list_cor_t1/(num_list_cor_t1+num_list_wrong_t1))*100
-    cor_ratio_t2= (num_list_cor_t2/(num_list_cor_t2+num_list_wrong_t2))*100
+    #cor_ratio_t1= (num_list_cor_t1/(num_list_cor_t1+num_list_wrong_t1))*100
+    #cor_ratio_t2= (num_list_cor_t2/(num_list_cor_t2+num_list_wrong_t2))*100
+
+    cor_ratio_t1= (num_list_cor_t1/30)*100
+    cor_ratio_t2= (num_list_cor_t2/30)*100
 
     cor_ratio_result = cor_ratio_result.append({'algo':algo
                                                   ,'correct_ratio_t1': cor_ratio_t1,

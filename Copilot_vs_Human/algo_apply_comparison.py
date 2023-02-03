@@ -4,7 +4,7 @@ import os
 from python_comparison import get_significant_subtrees, compare_subtrees
 import pandas as pd
 DATASET = "CoPilot_on_Algorithm_Design"
-GP_algo = "Sorting_Algorithms"
+GP_algo = "Elementary_Graph_Algorithms"
 
    
 
@@ -19,7 +19,10 @@ def paths_list(dir_path):
 
 
 
-algo_name =[ "Bubble_Sort", "Insertion_Sort", "Selection_Sort", "Merge_Sort", "Quick_Sort", "Heap_Sort","Bucket_Sort","Radix_Sort"]
+#algo_name =[ "Bubble_Sort", "Insertion_Sort", "Selection_Sort", "Merge_Sort", "Quick_Sort", "Heap_Sort","Bucket_Sort","Radix_Sort"]
+#algo_name =[ "Set_of_activities"]
+#algo_name=["Data_Structure", "Inorder_Walk","Min_Max_Values","Successor_Node"]
+algo_name=["BFS_Search", "DAG", "DFS_Search", "Data_Structure", "Strongly_Connected_Vetrices"]
 for algo in algo_name:
     CODE_DIR = os.path.join(
         os.getcwd(),
@@ -34,7 +37,7 @@ for algo in algo_name:
     for code_path in path_list:
         with open (code_path , "r") as source :
             file_name_1 = code_path.split("/")[-1]
-            print("file_1: ",file_name_1)
+            print("file_1: ",code_path)
             t1str = source . read ()
             t1str_mod = re.sub(r'(\"{2,3}[\s\n]*)(?:.*?[\s\n]*)*([\n\s]*\"{2,3})', r'', t1str, flags=re.MULTILINE)
             tree1 = ast . parse ( t1str_mod , mode ="exec")
@@ -45,7 +48,7 @@ for algo in algo_name:
         for comp_path in path_list:
             with open (comp_path , "r") as source :
                 file_name_2 = comp_path.split("/")[-1]
-                print("file_2: ",file_name_2)
+                print("file_2: ",comp_path)
                 t2str = source . read ()
                 t1str_mod = re.sub(r'(\"{2,3}[\s\n]*)(?:.*?[\s\n]*)*([\n\s]*\"{2,3})', r'', t1str, flags=re.MULTILINE)
                 tree2 = ast . parse ( t2str , mode ="exec")

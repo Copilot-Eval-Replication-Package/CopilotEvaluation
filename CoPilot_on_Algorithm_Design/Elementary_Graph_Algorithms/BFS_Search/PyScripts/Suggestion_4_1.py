@@ -7,6 +7,14 @@ class Graph:
         for i in range(self.V):
             self.graph[i] = []
 
+
+class Graph:
+    def __init__(self, vertices):
+        self.V = vertices
+        self.graph = [None] * self.V
+        for i in range(self.V):
+            self.graph[i] = []
+
     def add_edge(self, u, v):
         self.graph[u].append(v)
         self.graph[v].append(u)

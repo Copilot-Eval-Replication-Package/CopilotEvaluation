@@ -1,0 +1,14 @@
+
+
+def dfs(self, s):
+        visited = [False] * self.V
+        self.dfs_util(s, visited)
+
+def dfs_util(self, s, visited):
+        visited[s] = True
+        print(s, end=" ")
+        for i in self.graph[s]:
+            if visited[i] == False:
+                self.dfs_util(i, visited)
+    
+    

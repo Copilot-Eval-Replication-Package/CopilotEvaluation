@@ -1,9 +1,9 @@
 algo,correct_ratio_t1,correct_ratio_t2
-Bubble_Sort,100,0
-Insertion_Sort,100,100
-Selection_Sort,14.28571429,13.33333333
-Merge_Sort,33.33333333,0
-Quick_Sort,16.66666667,16.66666667
-Heap_Sort,0,9.090909091
-Bucket_Sort,85.71428571,0
-Radix_Sort,10,0
+Bubble_Sort,40.0,0.0
+Insertion_Sort,16.666666666666664,26.666666666666668
+Selection_Sort,10.0,6.666666666666667
+Merge_Sort,3.3333333333333335,0.0
+Quick_Sort,3.3333333333333335,3.3333333333333335
+Heap_Sort,0.0,3.3333333333333335
+Bucket_Sort,20.0,0.0
+Radix_Sort,3.3333333333333335,0.0
