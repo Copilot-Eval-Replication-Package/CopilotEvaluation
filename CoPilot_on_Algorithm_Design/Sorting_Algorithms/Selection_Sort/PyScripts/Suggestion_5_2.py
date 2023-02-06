@@ -10,4 +10,4 @@ def sort_array(arr):
                 smallest = unsorted_list[i]
         sorted_list.append(smallest)
         unsorted_list.remove(smallest)
-    return sorted_list"
+    return sorted_list

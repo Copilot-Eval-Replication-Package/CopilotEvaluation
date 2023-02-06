@@ -1,5 +1,6 @@
 
 
+
 def size(self):
         if self.left is None and self.right is None:
             pass
@@ -60,3 +61,6 @@ def size(self):
         elif self.right is None:
             return 1
 
+
+
+   

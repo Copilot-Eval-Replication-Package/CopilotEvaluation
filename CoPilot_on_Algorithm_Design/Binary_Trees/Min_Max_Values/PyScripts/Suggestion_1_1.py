@@ -93,6 +93,4 @@ def delete(self, value):
             return max(self.left.depth(), self.right.depth()) + 1
 
     # implement a function for finding the height of a BST
-    def height(self):
-        if
-
+ 

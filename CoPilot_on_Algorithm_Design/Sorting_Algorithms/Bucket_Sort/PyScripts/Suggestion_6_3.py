@@ -6,4 +6,4 @@ def bucket_sort(arr):
         buckets[int(i * len(arr))].append(i)
     for i in range(len(buckets)):
         buckets[i] = quick_sort(buckets[i])
-    return [i for bucket in buckets for i in bucket]"
+    return [i for bucket in buckets for i in bucket]

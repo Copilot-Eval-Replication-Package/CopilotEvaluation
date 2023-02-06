@@ -11,7 +11,7 @@ def insertion_sort(array):
         array[j + 1] = key
     return array
 
-if __name__ == ""__main__"":
+if __name__ == "__main__":
     test = [random.randint(0, 100) for _ in range(10)]
     print(insertion_sort(test))
 

@@ -1,0 +1,31 @@
+
+
+# create a class that implements a directed acyclic graph data structure.
+# the graph should have the following methods:
+# add_vertex(data)
+# add_edge(from_vertex, to_vertex, weight)
+# get_vertex(vertex_id)
+# get_vertices()
+# get_edges()
+# get_in_edges(vertex_id)
+# get_out_edges(vertex_id)
+# get_in_degree(vertex_id)
+# get_out_degree(vertex_id)
+# get_weight(from_vertex, to_vertex)
+# get_path(from_vertex, to_vertex)
+# get_path_length(from_vertex, to_vertex)
+# get_path_weight(from_vertex, to_vertex)
+# get_path_vertices(from_vertex, to_vertex)
+# get_path_edges(from_vertex, to_vertex)
+# get_path_length_weight(from_vertex, to_vertex)
+# get_path_weight_vertices(from_vertex, to_vertex)
+# get_path_weight_edges(from_vertex, to_vertex)
+# get_path_vertices_edges(from_vertex, to_vertex)
+# get_path_vertices_weight(from_vertex, to_vertex)
+# get_path_edges_weight(from_vertex, to_vertex)
+# get_path_vertices_weight_edges(from_vertex, to_vertex)
+# get_path_vertices_edges_weight(from_vertex, to_vertex)
+# get_path_weight_vertices_edges(from_vertex, to_vertex)
+# get_path_weight_vertices_edges_weight(from_vertex, to_vertex)
+# get_path_weight_edges_vertices_weight(from_vertex, to_vertex)
+# get_path_weight_vertices_edges_weight(from_vertex, to_vertex)"

@@ -1,0 +1,12 @@
+
+
+# implement a class called activity_selector. each instance of this class has an attribute called activities, which is a list of activity objects.
+# implement a method called select_activities, which takes in no arguments and returns a list of activity objects. this method should return all activities that start at the same time.
+# implement a method called total_duration, which takes in no arguments and returns the total duration of all activities in the activities attribute.
+# implement a method called select_activities_with_duration_under, which takes in one argument, an integer. this method should return a list of activity objects. this method should return all activities that start at the same time and the total duration of all activities is less than the integer passed in.
+# implement a method called select_activities_with_duration_over, which takes in one argument, an integer. this method should return a list of activity objects. this method should return all activities that start at the same time and the total duration of all activities is greater than the integer passed in.
+# implement a method called select_activities_with_duration, which takes in two arguments, an integer and a boolean. this method should return a list of activity objects. this method should return all activities that start at the same time and the total duration of all activities is greater than or equal to the integer passed in and less than or equal to the integer passed in. if the boolean is True, the total duration should be greater than the integer passed in. if the boolean is False, the total duration should be less than the integer passed in.
+# implement a method called select_activities_with_duration_range, which takes in two arguments, an integer and an integer. this method should return a list of activity objects. this method should return all activities that start at the same time and the total duration of all activities is greater than or equal to the integer passed in and less than or equal to the integer passed in.
+# implement a method called select_activities_with_duration_range_open_ended, which takes in one argument, an integer. this method should return a list of activity objects. this method should return all activities that start at the same time and the total duration of all activities is greater than or equal to the integer passed in.
+# implement a method called select_activities_with_duration_range_
+

@@ -32,18 +32,18 @@ def delete(self, value):
                     self.parent.right = self.left
 
     # implement a function for finding the minimum value in a BST
-    def find_min(self):
-        if self.left is None:
-            return self.value
-        else:
-            return self.left.find_min()
+def find_min(self):
+    if self.left is None:
+        return self.value
+    else:
+        return self.left.find_min()
 
     # implement a function for finding the maximum value in a BST
-    def find_max(self):
-        if self.right is None:
-            return self.value
-        else:
-            return self.right.find_max()
+def find_max(self):
+    if self.right is None:
+        return self.value
+    else:
+        return self.right.find_max()
 
     # implement a function for finding the maximum value in a BST
     def find_max_recursive(self):
@@ -90,5 +90,5 @@ def delete(self, value):
     def post_order_traversal(self):
         if self.left is not None:
             self.left.post_order_traversal()
-        if self.right is
+     
 
